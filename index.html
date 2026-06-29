@@ -1,0 +1,1246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Webxperts — Web Design &amp; Development Studio, Johannesburg</title>
+<meta name="description" content="Webxperts is a Johannesburg web design and development studio building fast, conversion-focused websites and brand identities for ambitious South African businesses. Book a strategy call.">
+<meta name="keywords" content="web design agency South Africa, web development Johannesburg, brand identity design South Africa">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.webxperts.co.za/">
+<meta name="theme-color" content="#0B0A0D">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Webxperts">
+<meta property="og:title" content="Webxperts — Web Design &amp; Development Studio, Johannesburg">
+<meta property="og:description" content="Fast, conversion-focused websites and brand identities for ambitious South African businesses. Book a strategy call.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+<meta property="og:url" content="https://www.webxperts.co.za/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Webxperts — Web Design &amp; Development Studio">
+<meta name="twitter:description" content="Fast, conversion-focused websites and brand identities for ambitious South African businesses.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 640'%3E%3Crect width='640' height='640' rx='140' fill='%230B0A0D'/%3E%3Cg fill='%23FDD000'%3E%3Cpolygon points='553.3,13.6 516.7,70.9 415,230.3 374,294.4 297.8,413.7 254,482.3 73.8,511.4 121.6,436.6 202.4,310.1 203,309.2 278.5,191 279.1,190 312.4,137.8 345.9,85.4 385.8,22.9'/%3E%3Cpolygon points='37.2,212.8 94.7,276.1 150.6,337.7 151.2,336.8 226.7,218.7 182.8,170.4'/%3E%3Cpolygon points='287.1,482.3 405.5,612.8 602.8,626.4 363.3,363'/%3E%3C/g%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Webxperts",
+  "image": "https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5",
+  "url": "https://www.webxperts.co.za",
+  "telephone": "+27-65-961-8206",
+  "email": "hello@webxperts.co.za",
+  "address": { "@type": "PostalAddress", "addressLocality": "Johannesburg", "addressRegion": "Gauteng", "addressCountry": "ZA" },
+  "areaServed": "South Africa",
+  "priceRange": "$$",
+  "description": "Web design and development studio in Johannesburg, South Africa, building fast, conversion-focused websites and brand identities.",
+  "sameAs": ["https://www.instagram.com/webxperts","https://www.linkedin.com/company/webxperts","https://www.facebook.com/webxperts"]
+}
+</script>
+
+<style>
+/* =====================================================================
+   TOKENS
+===================================================================== */
+:root{
+  --ink:#0B0A0D;          /* near-black */
+  --ink-2:#141318;
+  --ink-3:#1E1C24;
+  --bone:#ECE6D9;         /* warm bone paper */
+  --bone-2:#E2DBCB;
+  --bone-3:#D6CDB8;
+  --brand:#FDD000;        /* signal gold — always-bright brand accent (buttons, marks) */
+  --uv:#FDD000;           /* contextual accent — auto-darkens to amber on light surfaces */
+  --uv-soft:#FFDE45;
+  --uv-deep:#C9A300;
+  --taupe:#A99E88;        /* quiet tonal mid */
+
+  --on-ink:#ECE6D9;
+  --on-ink-dim:#9A9189;
+  --on-bone:#1A1518;
+  --on-bone-dim:#6B6258;
+
+  --line-ink: rgba(236,230,217,0.14);
+  --line-ink-2: rgba(236,230,217,0.30);
+  --line-bone: rgba(26,21,24,0.14);
+  --line-bone-2: rgba(26,21,24,0.28);
+
+  --display:'Bricolage Grotesque', sans-serif;
+  --body:'Inter', sans-serif;
+  --mono:'Space Mono', monospace;
+
+  --pad: clamp(4rem, 9vw, 9rem);
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --maxw: 1340px;
+
+  --ease: cubic-bezier(.22,.61,.36,1);
+  --ease-out: cubic-bezier(.16,1,.3,1);
+}
+
+*{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; }
+html.lenis, html.lenis body{ height:auto; }
+.lenis.lenis-smooth{ scroll-behavior:auto !important; }
+.lenis.lenis-stopped{ overflow:hidden; }
+
+body{
+  margin:0; background:var(--ink); color:var(--on-ink);
+  font-family:var(--body); font-size:1rem; line-height:1.6;
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+button{ font-family:inherit; color:inherit; }
+ul{ margin:0; padding:0; list-style:none; }
+h1,h2,h3,h4{ margin:0; font-family:var(--display); font-weight:700; line-height:1.0; letter-spacing:-0.02em; }
+p{ margin:0; }
+
+.wrap{ width:100%; max-width:var(--maxw); margin:0 auto; padding:0 var(--gutter); }
+
+::selection{ background:var(--brand); color:var(--ink); }
+
+.skip{ position:absolute; left:-999px; top:0; z-index:99999; background:var(--brand); color:var(--ink); padding:.6rem 1rem; font-family:var(--mono); font-size:.8rem; }
+.skip:focus{ left:1rem; top:1rem; }
+
+:focus-visible{ outline:2px solid var(--uv); outline-offset:3px; }
+
+/* =====================================================================
+   TYPE
+===================================================================== */
+.mono{ font-family:var(--mono); font-size:.74rem; letter-spacing:.08em; text-transform:uppercase; }
+.kicker{ font-family:var(--mono); font-size:.74rem; letter-spacing:.12em; text-transform:uppercase; display:inline-flex; align-items:center; gap:.6rem; color:var(--uv); }
+.kicker::before{ content:''; width:26px; height:1px; background:var(--uv); display:inline-block; }
+.section--ink .kicker{ color:var(--uv-soft); }
+
+.display-xl{ font-size:clamp(3rem, 11vw, 9.5rem); line-height:.92; font-weight:700; letter-spacing:-0.03em; }
+.display-l{ font-size:clamp(2.4rem, 7vw, 5.4rem); line-height:.96; font-weight:700; letter-spacing:-0.025em; }
+.display-m{ font-size:clamp(1.7rem, 3.6vw, 3rem); line-height:1.02; font-weight:700; letter-spacing:-0.02em; }
+.display-s{ font-size:clamp(1.25rem, 2vw, 1.6rem); line-height:1.1; font-weight:600; letter-spacing:-0.01em; }
+.lead{ font-size:clamp(1.05rem, 1.45vw, 1.3rem); line-height:1.55; max-width:44ch; font-weight:400; }
+.muted-ink{ color:var(--on-ink-dim); }
+.muted-bone{ color:var(--on-bone-dim); }
+em.uv{ font-style:normal; color:var(--uv); }
+.section--ink em.uv{ color:var(--uv-soft); }
+
+/* =====================================================================
+   SECTIONS
+===================================================================== */
+.section{ padding:var(--pad) 0; position:relative; }
+.section--ink{ background:var(--ink); color:var(--on-ink); }
+.section--bone{ background:var(--bone); color:var(--on-bone); --uv:#7A5F00; --uv-soft:#7A5F00; --uv-deep:#5E4A00; }
+.rule-top--ink{ border-top:1px solid var(--line-ink); }
+.rule-top--bone{ border-top:1px solid var(--line-bone); }
+
+.sec-head{ display:grid; grid-template-columns:1fr; gap:1.4rem; margin-bottom:clamp(2.5rem,5vw,4.5rem); }
+.sec-head .display-m{ max-width:18ch; }
+@media (min-width:900px){
+  .sec-head{ grid-template-columns:1.1fr .9fr; align-items:end; gap:2rem 3rem; }
+  .sec-head .lead{ justify-self:end; }
+}
+
+/* =====================================================================
+   BUTTONS
+===================================================================== */
+.btn{
+  position:relative; display:inline-flex; align-items:center; gap:.7rem;
+  font-family:var(--display); font-weight:600; font-size:.98rem; letter-spacing:-0.01em;
+  padding:1.05rem 1.9rem; border-radius:100px; border:1.5px solid transparent;
+  cursor:pointer; transition:background .3s var(--ease), color .3s var(--ease), border-color .3s var(--ease);
+  white-space:nowrap; will-change:transform;
+}
+.btn .dot{ width:7px; height:7px; border-radius:50%; background:currentColor; }
+.btn-uv{ background:var(--brand); color:var(--ink); }
+.btn-uv:hover{ background:#E9C200; }
+.btn-line{ background:transparent; border-color:currentColor; }
+.section--ink .btn-line:hover{ background:var(--on-ink); color:var(--ink); }
+.section--bone .btn-line:hover{ background:var(--on-bone); color:var(--bone); }
+.btn-text{ display:inline-flex; align-items:center; gap:.6rem; font-family:var(--display); font-weight:600; cursor:pointer; background:none; border:0; padding:.5rem 0; }
+.btn-text svg{ width:18px; height:18px; transition:transform .35s var(--ease); }
+.btn-text:hover svg{ transform:translateX(5px); }
+.btn-sm{ padding:.7rem 1.3rem; font-size:.85rem; }
+
+/* =====================================================================
+   GRAIN
+===================================================================== */
+.grain{ position:fixed; inset:0; z-index:9000; pointer-events:none; opacity:.04; mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+/* =====================================================================
+   PRELOADER
+===================================================================== */
+.preloader{ position:fixed; inset:0; z-index:10000; background:var(--ink); display:flex; align-items:flex-end; justify-content:space-between;
+  padding:var(--gutter); transition:none; }
+.pre-word{ font-family:var(--display); font-weight:700; font-size:clamp(2.2rem,9vw,6rem); letter-spacing:-0.03em; line-height:.9; overflow:hidden; }
+.pre-word span{ display:block; transform:translateY(110%); }
+.pre-count{ font-family:var(--mono); font-size:clamp(2.2rem,9vw,6rem); color:var(--uv-soft); font-weight:700; }
+.pre-bar{ position:absolute; left:0; bottom:0; height:2px; width:0; background:var(--uv); }
+
+/* =====================================================================
+   PAGE WIPE
+===================================================================== */
+.wipe{ position:fixed; inset:0; z-index:9500; background:var(--uv); transform:scaleY(0); transform-origin:bottom; pointer-events:none; }
+.wipe-label{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:var(--ink); font-family:var(--display); font-weight:700; font-size:clamp(2rem,8vw,5rem); opacity:0; letter-spacing:-0.03em; }
+
+/* =====================================================================
+   HEADER
+===================================================================== */
+.header{ position:fixed; top:0; left:0; right:0; z-index:1000; transition:background .4s var(--ease), border-color .4s var(--ease), backdrop-filter .4s var(--ease); border-bottom:1px solid transparent; }
+.header.scrolled{ background:rgba(10,9,12,.74); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-bottom-color:var(--line-ink); }
+.header-inner{ display:flex; align-items:center; justify-content:space-between; height:78px; }
+.header.scrolled .header-inner{ height:66px; }
+.header-inner, .header.scrolled .header-inner{ transition:height .4s var(--ease); }
+
+.brand{ display:flex; align-items:center; gap:.7rem; }
+.brand svg{ width:34px; height:34px; }
+.brand b{ font-family:var(--display); font-weight:700; font-size:1.3rem; letter-spacing:-0.02em; }
+
+.nav{ display:flex; align-items:center; gap:2.4rem; }
+.nav a{ font-family:var(--mono); font-size:.78rem; letter-spacing:.05em; color:var(--on-ink-dim); position:relative; padding:.4rem 0; transition:color .25s var(--ease); text-transform:uppercase; }
+.nav a:hover, .nav a.active{ color:var(--on-ink); }
+.nav a::after{ content:''; position:absolute; left:0; bottom:-1px; width:0; height:1px; background:var(--uv-soft); transition:width .35s var(--ease); }
+.nav a:hover::after, .nav a.active::after{ width:100%; }
+
+.header-right{ display:flex; align-items:center; gap:1rem; }
+.menu-toggle{ display:none; width:46px; height:46px; border:1px solid var(--line-ink-2); border-radius:50%; background:none; cursor:pointer; flex-direction:column; align-items:center; justify-content:center; gap:5px; }
+.menu-toggle span{ width:18px; height:1.5px; background:var(--on-ink); transition:transform .3s var(--ease), opacity .3s var(--ease); }
+.menu-toggle[aria-expanded="true"] span:nth-child(1){ transform:translateY(6.5px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+.menu-toggle[aria-expanded="true"] span:nth-child(3){ transform:translateY(-6.5px) rotate(-45deg); }
+
+@media (max-width:920px){
+  .nav, .header-cta{ display:none; }
+  .menu-toggle{ display:flex; }
+}
+
+/* MOBILE MENU */
+.mobile-menu{ position:fixed; inset:0; z-index:990; background:var(--ink); padding:calc(78px + 2rem) var(--gutter) 2rem; display:flex; flex-direction:column; justify-content:space-between; transform:translateY(-101%); transition:transform .6s var(--ease-out); visibility:hidden; }
+.mobile-menu.open{ transform:translateY(0); visibility:visible; }
+.mm-links a{ display:flex; align-items:baseline; gap:1.1rem; font-family:var(--display); font-weight:700; font-size:clamp(2.2rem,11vw,3.4rem); letter-spacing:-0.03em; padding:.5rem 0; border-bottom:1px solid var(--line-ink); }
+.mm-links a .i{ font-family:var(--mono); font-size:.85rem; color:var(--uv-soft); font-weight:400; }
+.mm-foot{ display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
+.socials{ display:flex; gap:.7rem; }
+.socials a{ width:42px; height:42px; border:1px solid var(--line-ink-2); border-radius:50%; display:flex; align-items:center; justify-content:center; transition:background .25s, border-color .25s; }
+.socials a:hover{ background:var(--uv); border-color:var(--uv); }
+.socials svg{ width:16px; height:16px; }
+
+/* =====================================================================
+   SPA PAGES
+===================================================================== */
+.page{ display:none; }
+.page.active{ display:block; }
+.page-main{ padding-top:0; }
+
+/* =====================================================================
+   HERO
+===================================================================== */
+.hero{ position:relative; min-height:100svh; display:flex; align-items:center; overflow:hidden; padding:8rem 0 3rem; }
+.hero-glow{ position:absolute; z-index:0; width:60vw; height:60vw; max-width:760px; max-height:760px; border-radius:50%; background:radial-gradient(circle, rgba(253,208,0,.20), transparent 62%); filter:blur(20px); top:-12%; right:-8%; pointer-events:none; }
+.hero-inner{ position:relative; z-index:2; width:100%; }
+.hero h1{ margin:1.6rem 0; }
+.rh-mask{ display:block; overflow:hidden; padding-bottom:.04em; }
+.rh-line{ display:block; transform:translateY(110%); }
+
+/* cycling word */
+.cycle{ display:inline-flex; vertical-align:bottom; position:relative; height:1em; overflow:hidden; color:var(--uv-soft); }
+.cycle-track{ display:flex; flex-direction:column; }
+.cycle-track span{ display:block; height:1em; line-height:1; white-space:nowrap; }
+
+.hero-foot{ display:flex; align-items:flex-end; justify-content:space-between; gap:2rem; flex-wrap:wrap; margin-top:1rem; }
+.hero-cta{ display:flex; gap:1rem; flex-wrap:wrap; }
+.hero-scroll{ display:flex; flex-direction:column; align-items:flex-end; gap:.6rem; color:var(--on-ink-dim); }
+.hero-scroll .mono{ color:var(--on-ink-dim); }
+.hero-scroll .bar{ width:1px; height:46px; background:linear-gradient(var(--uv-soft), transparent); }
+@media (max-width:680px){ .hero-scroll{ display:none; } }
+
+.page-hero{ min-height:auto; padding:11rem 0 4rem; }
+
+/* =====================================================================
+   MARQUEE (trust)
+===================================================================== */
+.marquee{ overflow:hidden; padding:1.6rem 0; border-top:1px solid var(--line-bone); border-bottom:1px solid var(--line-bone); }
+.section--ink .marquee{ border-color:var(--line-ink); }
+.marquee-row{ display:flex; gap:0; width:max-content; animation:scrollx 34s linear infinite; }
+.marquee:hover .marquee-row{ animation-play-state:paused; }
+@keyframes scrollx{ to{ transform:translateX(-50%); } }
+.marquee-item{ display:inline-flex; align-items:center; gap:1.6rem; padding:0 1.6rem; font-family:var(--display); font-weight:600; font-size:clamp(1.1rem,2vw,1.7rem); letter-spacing:-0.01em; white-space:nowrap; color:var(--on-bone); }
+.marquee-item::after{ content:''; width:7px; height:7px; border-radius:50%; background:var(--uv); display:inline-block; }
+.section--ink .marquee-item{ color:var(--on-ink); }
+.trust-label{ text-align:center; margin-bottom:1.4rem; color:var(--on-bone-dim); }
+
+/* =====================================================================
+   BENEFITS (numbered — real ordered set of pillars)
+===================================================================== */
+.benefit{ display:grid; grid-template-columns:auto 1fr; gap:1.4rem 2rem; padding:2.6rem 0; border-top:1px solid var(--line-bone); align-items:start; }
+.benefit:last-child{ border-bottom:1px solid var(--line-bone); }
+.benefit .b-num{ font-family:var(--mono); font-size:.82rem; color:var(--uv); padding-top:.5rem; }
+.benefit .b-body{ display:grid; grid-template-columns:1fr; gap:1rem; }
+.benefit h3{ font-size:clamp(1.5rem,3vw,2.3rem); }
+.benefit p{ max-width:52ch; color:var(--on-bone-dim); line-height:1.65; }
+@media (min-width:860px){
+  .benefit{ grid-template-columns:auto 1.1fr 1fr; align-items:center; }
+  .benefit .b-body{ display:contents; }
+}
+
+/* =====================================================================
+   SERVICES PREVIEW (home) + grid (services page)
+===================================================================== */
+.svc-grid{ display:grid; grid-template-columns:1fr; gap:1px; background:var(--line-ink); border:1px solid var(--line-ink); }
+@media (min-width:760px){ .svc-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:1080px){ .svc-grid.cols-3{ grid-template-columns:repeat(3,1fr); } }
+.svc{ background:var(--ink); padding:2.6rem; display:flex; flex-direction:column; gap:1rem; min-height:240px; transition:background .35s var(--ease); }
+.section--bone .svc-grid{ background:var(--line-bone); border-color:var(--line-bone); }
+.section--bone .svc{ background:var(--bone); }
+.svc:hover{ background:var(--uv); color:#fff; }
+.svc:hover .svc-num, .svc:hover p, .svc:hover .svc-chips span{ color:rgba(255,255,255,.85); border-color:rgba(255,255,255,.4); }
+.svc-num{ font-family:var(--mono); font-size:.76rem; color:var(--uv-soft); }
+.section--bone .svc-num{ color:var(--uv); }
+.svc h3{ font-size:clamp(1.4rem,2.4vw,1.9rem); margin-top:auto; }
+.svc p{ color:var(--on-ink-dim); line-height:1.6; font-size:.96rem; }
+.section--bone .svc p{ color:var(--on-bone-dim); }
+.svc-chips{ display:flex; flex-wrap:wrap; gap:.5rem; }
+.svc-chips span{ font-family:var(--mono); font-size:.66rem; letter-spacing:.04em; padding:.3rem .6rem; border:1px solid var(--line-ink-2); border-radius:100px; color:var(--on-ink-dim); }
+.section--bone .svc-chips span{ border-color:var(--line-bone-2); color:var(--on-bone-dim); }
+
+/* =====================================================================
+   PINNED HORIZONTAL WORK
+===================================================================== */
+.work-pin{ position:relative; }
+.work-pin .work-head{ display:flex; align-items:flex-end; justify-content:space-between; gap:2rem; flex-wrap:wrap; margin-bottom:2.4rem; }
+.work-track{ display:flex; gap:1.6rem; padding-bottom:.5rem; }
+.work-card{ flex:0 0 auto; width:min(78vw, 460px); cursor:pointer; }
+.work-shot{ position:relative; aspect-ratio:4/3; border-radius:6px; overflow:hidden; background:var(--ink-2); }
+.work-shot img{ width:100%; height:100%; object-fit:cover; filter:saturate(.85) contrast(1.04); transition:transform .7s var(--ease); }
+.work-card:hover .work-shot img{ transform:scale(1.05); }
+.work-shot .num{ position:absolute; top:1rem; left:1rem; font-family:var(--mono); font-size:.74rem; color:#fff; mix-blend-mode:difference; }
+.work-shot .go{ position:absolute; right:1rem; bottom:1rem; width:46px; height:46px; border-radius:50%; background:var(--uv); display:flex; align-items:center; justify-content:center; transform:scale(0) rotate(-30deg); transition:transform .4s var(--ease); }
+.work-card:hover .work-shot .go{ transform:scale(1) rotate(0); }
+.work-shot .go svg{ width:18px; height:18px; stroke:var(--ink); }
+.work-meta{ display:flex; align-items:baseline; justify-content:space-between; gap:1rem; margin-top:1rem; }
+.work-meta h3{ font-size:1.4rem; }
+.work-meta .cat{ font-family:var(--mono); font-size:.7rem; color:var(--uv-soft); text-transform:uppercase; letter-spacing:.05em; white-space:nowrap; }
+.work-card p{ color:var(--on-ink-dim); font-size:.92rem; line-height:1.55; margin-top:.5rem; }
+.work-progress{ height:2px; background:var(--line-ink); margin-top:2.6rem; position:relative; }
+.work-progress i{ position:absolute; left:0; top:0; height:100%; width:0; background:var(--uv); }
+@media (max-width:899px){
+  .work-track{ flex-wrap:wrap; }
+  .work-card{ width:100%; }
+  .work-progress{ display:none; }
+}
+
+/* =====================================================================
+   TESTIMONIALS
+===================================================================== */
+.quotes{ display:grid; grid-template-columns:1fr; gap:1px; background:var(--line-bone); border:1px solid var(--line-bone); }
+@media (min-width:860px){ .quotes{ grid-template-columns:repeat(3,1fr); } }
+.quote{ background:var(--bone); padding:2.6rem; display:flex; flex-direction:column; gap:1.6rem; }
+.quote .stars{ display:flex; gap:.25rem; color:var(--uv); }
+.quote .stars svg{ width:15px; height:15px; fill:currentColor; }
+.quote blockquote{ font-family:var(--display); font-weight:500; font-size:1.18rem; line-height:1.35; letter-spacing:-0.01em; }
+.quote .who{ display:flex; align-items:center; gap:.85rem; margin-top:auto; }
+.quote .av{ width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--display); font-weight:700; font-size:.85rem; color:#fff; background:var(--uv); }
+.quote .who b{ display:block; font-family:var(--body); font-weight:600; font-size:.95rem; }
+.quote .who span{ display:block; font-size:.82rem; color:var(--on-bone-dim); }
+
+/* =====================================================================
+   EDITORIAL SPLIT (about preview / story)
+===================================================================== */
+.split{ display:grid; grid-template-columns:1fr; gap:2.6rem; align-items:center; }
+@media (min-width:900px){ .split{ grid-template-columns:1.05fr .95fr; gap:clamp(3rem,6vw,6rem); } .split.flip .split-media{ order:-1; } }
+.split-media{ position:relative; border-radius:6px; overflow:hidden; aspect-ratio:4/5; }
+.split-media img{ width:100%; height:118%; object-fit:cover; filter:saturate(.85) contrast(1.05); will-change:transform; }
+.split-media .badge{ position:absolute; left:1.2rem; bottom:1.2rem; background:var(--brand); color:var(--ink); font-family:var(--mono); font-size:.72rem; padding:.5rem .8rem; border-radius:4px; letter-spacing:.04em; }
+.stats{ display:flex; flex-wrap:wrap; gap:2.4rem 3rem; margin:2.4rem 0; }
+.stat .n{ font-family:var(--display); font-weight:700; font-size:clamp(2.4rem,5vw,3.6rem); letter-spacing:-0.03em; line-height:1; }
+.stat .n em{ color:var(--uv); font-style:normal; }
+.section--ink .stat .n em{ color:var(--uv-soft); }
+.stat .l{ font-family:var(--mono); font-size:.72rem; letter-spacing:.05em; text-transform:uppercase; color:var(--on-bone-dim); margin-top:.6rem; max-width:16ch; }
+.section--ink .stat .l{ color:var(--on-ink-dim); }
+
+/* =====================================================================
+   DIFFERENTIATORS (about)
+===================================================================== */
+.diffs{ border-top:1px solid var(--line-bone); }
+.diff{ display:grid; grid-template-columns:1fr; gap:.6rem; padding:2.4rem 0; border-bottom:1px solid var(--line-bone); position:relative; transition:padding-left .4s var(--ease); }
+.diff .dt{ font-family:var(--mono); font-size:.8rem; color:var(--uv); }
+.diff h3{ font-size:clamp(1.5rem,3vw,2.2rem); }
+.diff p{ color:var(--on-bone-dim); max-width:62ch; line-height:1.6; }
+@media (min-width:820px){ .diff{ grid-template-columns:.2fr 1fr 1.3fr; gap:2rem; align-items:baseline; } .diff:hover{ padding-left:1.2rem; } .diff::before{ content:''; position:absolute; left:0; top:50%; width:0; height:8px; background:var(--uv); transform:translateY(-50%); transition:width .4s var(--ease); } .diff:hover::before{ width:.6rem; } }
+
+/* =====================================================================
+   PROCESS STEPS (services) — numbered: real sequence
+===================================================================== */
+.steps{ display:grid; grid-template-columns:1fr; gap:0; }
+@media (min-width:760px){ .steps{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:1080px){ .steps{ grid-template-columns:repeat(5,1fr); } }
+.step{ padding:2.2rem 1.8rem 2.6rem; border-top:2px solid var(--line-ink-2); position:relative; }
+.step .sn{ font-family:var(--mono); font-size:.78rem; color:var(--uv-soft); display:block; margin-bottom:2.4rem; }
+.step h3{ font-size:1.5rem; margin-bottom:.7rem; }
+.step p{ color:var(--on-ink-dim); font-size:.94rem; line-height:1.6; }
+.step::before{ content:''; position:absolute; top:-2px; left:0; width:0; height:2px; background:var(--uv); transition:width .6s var(--ease); }
+.step.in::before{ width:100%; }
+
+/* =====================================================================
+   FAQ
+===================================================================== */
+.faq{ max-width:880px; border-top:1px solid var(--line-bone); }
+.faq-item{ border-bottom:1px solid var(--line-bone); }
+.faq-q{ width:100%; display:flex; align-items:center; justify-content:space-between; gap:1.5rem; padding:1.7rem 0; background:none; border:0; cursor:pointer; text-align:left; font-family:var(--display); font-weight:600; font-size:clamp(1.1rem,2vw,1.4rem); letter-spacing:-0.01em; }
+.faq-ic{ position:relative; width:20px; height:20px; flex-shrink:0; }
+.faq-ic::before,.faq-ic::after{ content:''; position:absolute; background:var(--uv); transition:transform .35s var(--ease), opacity .35s var(--ease); }
+.faq-ic::before{ top:50%; left:0; width:100%; height:2px; transform:translateY(-50%); }
+.faq-ic::after{ left:50%; top:0; height:100%; width:2px; transform:translateX(-50%); }
+.faq-item.open .faq-ic::after{ transform:translateX(-50%) scaleY(0); opacity:0; }
+.faq-a{ display:grid; grid-template-rows:0fr; transition:grid-template-rows .4s var(--ease); }
+.faq-a>div{ overflow:hidden; min-height:0; }
+.faq-item.open .faq-a{ grid-template-rows:1fr; }
+.faq-a p{ padding:0 0 1.7rem; color:var(--on-bone-dim); max-width:68ch; line-height:1.65; }
+
+/* =====================================================================
+   PORTFOLIO
+===================================================================== */
+.filters{ display:flex; flex-wrap:wrap; gap:.7rem; margin-bottom:3rem; }
+.filter{ font-family:var(--mono); font-size:.78rem; letter-spacing:.03em; padding:.6rem 1.2rem; border-radius:100px; border:1px solid var(--line-bone-2); background:none; cursor:pointer; color:var(--on-bone-dim); transition:all .25s var(--ease); text-transform:uppercase; }
+.filter.active{ background:var(--ink); color:var(--bone); border-color:var(--ink); }
+.pf-grid{ display:grid; grid-template-columns:1fr; gap:1.6rem; }
+@media (min-width:680px){ .pf-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:1040px){ .pf-grid{ grid-template-columns:repeat(3,1fr); } }
+.pf{ cursor:pointer; }
+.pf.hide{ display:none; }
+.pf-shot{ position:relative; aspect-ratio:4/3; border-radius:6px; overflow:hidden; background:var(--ink-2); }
+.pf-shot img{ width:100%; height:100%; object-fit:cover; filter:saturate(.82) contrast(1.05); transition:transform .7s var(--ease); }
+.pf:hover .pf-shot img{ transform:scale(1.06); }
+.pf-shot .ov{ position:absolute; inset:0; background:linear-gradient(180deg,rgba(90,51,240,0) 45%,rgba(67,34,201,.7)); opacity:0; display:flex; align-items:flex-end; padding:1.1rem; transition:opacity .35s var(--ease); }
+.pf:hover .pf-shot .ov{ opacity:1; }
+.pf-shot .ov span{ font-family:var(--mono); font-size:.74rem; color:#fff; letter-spacing:.04em; }
+.pf-meta{ display:flex; align-items:baseline; justify-content:space-between; gap:1rem; margin-top:1.1rem; }
+.pf-meta h3{ font-size:1.3rem; }
+.pf-meta .cat{ font-family:var(--mono); font-size:.68rem; color:var(--uv); text-transform:uppercase; letter-spacing:.05em; white-space:nowrap; }
+.pf p{ color:var(--on-bone-dim); font-size:.92rem; line-height:1.55; margin-top:.4rem; }
+
+/* MODAL */
+.modal{ position:fixed; inset:0; z-index:2000; background:rgba(22,18,23,.82); backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; padding:var(--gutter); opacity:0; visibility:hidden; transition:opacity .35s var(--ease), visibility .35s var(--ease); }
+.modal.open{ opacity:1; visibility:visible; }
+.modal-box{ background:var(--bone); color:var(--on-bone); --uv:#7A5F00; --uv-soft:#7A5F00; border-radius:8px; max-width:780px; width:100%; max-height:90vh; overflow:auto; transform:translateY(30px) scale(.98); transition:transform .4s var(--ease-out); position:relative; }
+.modal.open .modal-box{ transform:none; }
+.modal-media{ aspect-ratio:16/9; overflow:hidden; }
+.modal-media img{ width:100%; height:100%; object-fit:cover; }
+.modal-body{ padding:2.4rem clamp(1.6rem,4vw,2.8rem) 2.8rem; }
+.modal-body .cat{ font-family:var(--mono); font-size:.74rem; color:var(--uv); text-transform:uppercase; letter-spacing:.05em; }
+.modal-body h3{ font-size:clamp(1.7rem,4vw,2.4rem); margin:.7rem 0 1.1rem; }
+.modal-body p{ color:var(--on-bone-dim); line-height:1.7; margin-bottom:1.8rem; }
+.modal-x{ position:absolute; top:1rem; right:1rem; width:42px; height:42px; border-radius:50%; background:var(--ink); color:var(--bone); border:0; cursor:pointer; display:flex; align-items:center; justify-content:center; z-index:2; }
+.modal-x svg{ width:16px; height:16px; }
+
+/* =====================================================================
+   CONTACT
+===================================================================== */
+.contact-grid{ display:grid; grid-template-columns:1fr; gap:3rem; align-items:start; }
+@media (min-width:920px){ .contact-grid{ grid-template-columns:1.15fr .85fr; gap:clamp(3rem,6vw,6rem); } }
+.field{ margin-bottom:1.6rem; }
+.field label{ display:block; font-family:var(--mono); font-size:.72rem; letter-spacing:.05em; text-transform:uppercase; margin-bottom:.6rem; color:var(--on-bone-dim); }
+.field input, .field textarea{ width:100%; background:none; border:0; border-bottom:1.5px solid var(--line-bone-2); padding:.75rem .1rem; font-family:var(--body); font-size:1.05rem; color:var(--on-bone); transition:border-color .25s var(--ease); }
+.field input:focus, .field textarea:focus{ outline:none; border-color:var(--uv); }
+.field textarea{ resize:vertical; min-height:120px; }
+.field .err{ display:none; color:var(--uv-deep); font-family:var(--mono); font-size:.74rem; margin-top:.45rem; }
+.field.bad input, .field.bad textarea{ border-color:var(--uv-deep); }
+.field.bad .err{ display:block; }
+#sent{ display:none; padding:3.4rem 1.5rem; border:1px dashed var(--line-bone-2); border-radius:8px; text-align:center; }
+#sent.show{ display:block; }
+#sent svg{ width:44px; height:44px; margin:0 auto 1.2rem; stroke:var(--uv); }
+#cform.gone{ display:none; }
+
+.info{ background:var(--ink); color:var(--on-ink); border-radius:8px; padding:2.6rem; }
+.info-row{ display:flex; gap:1rem; padding:1.2rem 0; border-top:1px solid var(--line-ink); }
+.info-row:first-child{ border-top:0; padding-top:0; }
+.info-row svg{ width:18px; height:18px; stroke:var(--uv-soft); flex-shrink:0; margin-top:.15rem; }
+.info-row .l{ font-family:var(--mono); font-size:.7rem; letter-spacing:.05em; text-transform:uppercase; color:var(--on-ink-dim); margin-bottom:.3rem; }
+.info-row .v{ font-size:1rem; }
+.info .socials{ margin-top:1.8rem; }
+
+/* =====================================================================
+   FINAL CTA
+===================================================================== */
+.cta-big{ text-align:center; }
+.cta-big .display-l{ max-width:16ch; margin:1.4rem auto; }
+.cta-big .lead{ margin:0 auto 2.4rem; }
+.cta-big .hero-cta{ justify-content:center; }
+.cta-big .note{ margin-top:1.6rem; }
+
+/* =====================================================================
+   FOOTER
+===================================================================== */
+.footer{ background:var(--ink); color:var(--on-ink); padding:clamp(3.5rem,7vw,6rem) 0 2rem; }
+.footer-top{ display:grid; grid-template-columns:1fr; gap:2.6rem; padding-bottom:3rem; border-bottom:1px solid var(--line-ink); }
+@media (min-width:760px){ .footer-top{ grid-template-columns:1.6fr 1fr 1fr 1fr; gap:2.5rem; } }
+.footer-brand p{ color:var(--on-ink-dim); max-width:34ch; line-height:1.6; margin:1.2rem 0 1.6rem; font-size:.94rem; }
+.footer-col h4{ font-family:var(--mono); font-size:.72rem; letter-spacing:.07em; text-transform:uppercase; color:var(--on-ink-dim); margin-bottom:1.3rem; }
+.footer-col li{ margin-bottom:.8rem; }
+.footer-col a, .footer-col span{ color:var(--on-ink-dim); font-size:.94rem; transition:color .2s var(--ease); }
+.footer-col a:hover{ color:var(--on-ink); }
+.footer-big{ font-family:var(--display); font-weight:700; font-size:clamp(3.5rem,17vw,14rem); line-height:.85; letter-spacing:-0.04em; padding:2.5rem 0 1rem; color:var(--ink-3); -webkit-text-stroke:1px var(--line-ink-2); }
+.footer-bottom{ display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap; padding-top:1.5rem; border-top:1px solid var(--line-ink); }
+.footer-bottom .mono{ color:var(--on-ink-dim); }
+
+/* =====================================================================
+   REVEAL HELPERS (JS-driven via gsap; safe fallback visible)
+===================================================================== */
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
+  .rh-line{ transform:none !important; }
+  .pre-word span{ transform:none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="pre-word"><span id="preWord">Webxperts</span></div>
+  <div class="pre-count"><span id="preCount">0</span></div>
+  <div class="pre-bar" id="preBar"></div>
+</div>
+
+<div class="wipe" id="wipe" aria-hidden="true"><div class="wipe-label" id="wipeLabel"></div></div>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="header" id="header">
+  <div class="wrap header-inner">
+    <a href="#home" class="brand" data-link aria-label="Webxperts — home">
+      <svg viewBox="0 0 640 640" fill="var(--brand)" aria-hidden="true"><polygon points="553.3,13.6 516.7,70.9 415,230.3 374,294.4 297.8,413.7 254,482.3 73.8,511.4 121.6,436.6 202.4,310.1 203,309.2 278.5,191 279.1,190 312.4,137.8 345.9,85.4 385.8,22.9"/><polygon points="37.2,212.8 94.7,276.1 150.6,337.7 151.2,336.8 226.7,218.7 182.8,170.4"/><polygon points="287.1,482.3 405.5,612.8 602.8,626.4 363.3,363"/></svg>
+      <b>Webxperts</b>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#home" data-link>Home</a>
+      <a href="#about" data-link>About</a>
+      <a href="#services" data-link>Services</a>
+      <a href="#portfolio" data-link>Portfolio</a>
+      <a href="#contact" data-link>Contact</a>
+    </nav>
+    <div class="header-right">
+      <a href="#contact" class="btn btn-uv btn-sm header-cta magnetic" data-link>Book a Call</a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+  <div class="mm-links">
+    <a href="#home" data-link><span class="i">01</span>Home</a>
+    <a href="#about" data-link><span class="i">02</span>About</a>
+    <a href="#services" data-link><span class="i">03</span>Services</a>
+    <a href="#portfolio" data-link><span class="i">04</span>Portfolio</a>
+    <a href="#contact" data-link><span class="i">05</span>Contact</a>
+  </div>
+  <div class="mm-foot">
+    <a href="#contact" class="btn btn-uv" data-link>Book a Call</a>
+    <div class="socials">
+      <a href="https://www.instagram.com/webxperts" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="#ECE6D9" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
+      <a href="https://wa.me/27659618206" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="#ECE6D9" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3z"/><path d="M8.5 8.2c.2-.5.4-.5.6-.5h.5c.2 0 .4 0 .6.5l.7 1.6c.1.2 0 .4-.1.6l-.4.5c-.1.2-.2.3 0 .6a6 6 0 0 0 2.6 2.3c.3.1.4 0 .6-.1l.5-.6c.2-.2.3-.2.6-.1l1.5.8c.3.1.4.2.4.4 0 .4-.2 1.1-.6 1.3-.4.3-1.2.6-2 .4a8 8 0 0 1-5.3-4.6c-.3-.8-.1-1.6.1-2z"/></svg></a>
+      <a href="https://www.facebook.com/webxperts" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="#ECE6D9" stroke-width="1.6"><path d="M15 4h-2a4 4 0 0 0-4 4v2H7v3h2v7h3v-7h2.5l.5-3H12V8a1 1 0 0 1 1-1h2z"/></svg></a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ===================== HOME ===================== -->
+<section class="page active" data-page="home" aria-labelledby="home-h1">
+
+  <section class="hero section--ink">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <p class="kicker reveal-hero-el">Web design &amp; development studio — Johannesburg, ZA</p>
+      <h1 class="display-xl" id="home-h1">
+        <span class="rh-mask"><span class="rh-line">We build</span></span>
+        <span class="rh-mask"><span class="rh-line">websites that</span></span>
+        <span class="rh-mask"><span class="rh-line"><span class="cycle" id="cycle" aria-label="convert"><span class="cycle-track"><span>convert.</span><span>load fast.</span><span>rank #1.</span><span>win awards.</span><span>sell.</span><span>convert.</span></span></span></span></span>
+      </h1>
+      <div class="hero-foot">
+        <div class="reveal-hero-el">
+          <p class="lead muted-ink" style="margin-bottom:2rem;">The web design and development agency that helps your business stand out online — through fast, custom-built websites and brand identities, designed and developed in-house in Johannesburg.</p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-uv magnetic" data-link><span class="dot"></span>Book a Call</a>
+            <a href="#portfolio" class="btn btn-line magnetic" data-link>See Selected Work</a>
+          </div>
+        </div>
+        <div class="hero-scroll" aria-hidden="true"><span class="mono">Scroll</span><span class="bar"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section--bone" style="padding:3.4rem 0;">
+    <div class="wrap"><p class="trust-label mono">Trusted by ambitious South African brands</p></div>
+    <div class="marquee">
+      <div class="marquee-row" id="trustRow">
+        <span class="marquee-item">Stonebridge Logistics</span><span class="marquee-item">Aurelia Skincare</span><span class="marquee-item">Horizon Realty</span><span class="marquee-item">Kalahari &amp; Co</span><span class="marquee-item">Pioneer Fintech</span><span class="marquee-item">Savanna Eats</span><span class="marquee-item">Bluerock Capital</span><span class="marquee-item">Pulse Fitness</span>
+        <span class="marquee-item">Stonebridge Logistics</span><span class="marquee-item">Aurelia Skincare</span><span class="marquee-item">Horizon Realty</span><span class="marquee-item">Kalahari &amp; Co</span><span class="marquee-item">Pioneer Fintech</span><span class="marquee-item">Savanna Eats</span><span class="marquee-item">Bluerock Capital</span><span class="marquee-item">Pulse Fitness</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--bone">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="display-m anim">Three reasons clients<br>pick us — and stay.</h2>
+        <p class="lead muted-bone anim">Every site we ship is judged on one thing: does it grow the business. Here's how we make sure it does.</p>
+      </div>
+      <div class="benefits">
+        <article class="benefit anim"><div class="b-num">01</div><h3>Built to convert</h3><p>Every layout, headline and button is designed around one goal — turning visitors into booked calls and paying clients, not just looking pretty.</p></article>
+        <article class="benefit anim"><div class="b-num">02</div><h3>Engineered for speed</h3><p>Hand-coded, lightweight builds that load in under two seconds. A slow site loses customers before they've read a single word.</p></article>
+        <article class="benefit anim"><div class="b-num">03</div><h3>SEO from day one</h3><p>Clean semantic code and on-page SEO baked into every build, so Google finds you as fast as your customers do.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--ink work-pin" id="homeWork">
+    <div class="wrap">
+      <div class="work-head">
+        <div><p class="kicker anim">Selected work</p><h2 class="display-m anim" style="margin-top:1.2rem;">Proof, not promises.</h2></div>
+        <a href="#portfolio" class="btn-text anim" data-link>View all projects <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="work-track" id="workTrack">
+        <article class="work-card open-modal" data-title="Stonebridge Logistics" data-cat="Web Development" data-img="https://images.unsplash.com/photo-1569748130764-3fed0c102c59?auto=format&fit=crop&w=1200&q=80" data-desc="We rebuilt Stonebridge's platform from the ground up — a hand-coded dashboard where customers request quotes and track shipments in real time. Load times dropped from 6.2s to under 1.4s, and online quote requests rose 64% in the first quarter.">
+          <div class="work-shot"><span class="num">01</span><img src="https://images.unsplash.com/photo-1569748130764-3fed0c102c59?auto=format&fit=crop&w=900&q=80" alt="Quote calculator and live tracking dashboard built for Stonebridge Logistics" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+          <div class="work-meta"><h3>Stonebridge Logistics</h3><span class="cat">Web Dev</span></div>
+          <p>Custom quote calculator and live tracking dashboard for a growing logistics provider.</p>
+        </article>
+        <article class="work-card open-modal" data-title="Aurelia Skincare" data-cat="Web Design" data-img="https://images.unsplash.com/photo-1575248208233-c777219911e2?auto=format&fit=crop&w=1200&q=80" data-desc="Aurelia needed a site as considered as their formulations. We designed an editorial layout with large product photography, ingredient storytelling and a streamlined checkout — average order value rose 38% within two months.">
+          <div class="work-shot"><span class="num">02</span><img src="https://images.unsplash.com/photo-1575248208233-c777219911e2?auto=format&fit=crop&w=900&q=80" alt="Editorial ecommerce website design for Aurelia Skincare" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+          <div class="work-meta"><h3>Aurelia Skincare</h3><span class="cat">Web Design</span></div>
+          <p>Editorial ecommerce experience for a premium South African skincare brand.</p>
+        </article>
+        <article class="work-card open-modal" data-title="Horizon Realty" data-cat="Web Development" data-img="https://images.unsplash.com/photo-1758846946191-dfe1cd91779b?auto=format&fit=crop&w=1200&q=80" data-desc="Horizon's old site couldn't handle their growing catalogue. We built a custom property platform with map-based search, instant filtering and a CMS their team runs without a developer — and it now ranks on page one for their core local terms.">
+          <div class="work-shot"><span class="num">03</span><img src="https://images.unsplash.com/photo-1758846946191-dfe1cd91779b?auto=format&fit=crop&w=900&q=80" alt="Property listing platform with map search built for Horizon Realty" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+          <div class="work-meta"><h3>Horizon Realty</h3><span class="cat">Web Dev</span></div>
+          <p>Property listing platform with map-based search and saved searches.</p>
+        </article>
+        <article class="work-card open-modal" data-title="Kalahari &amp; Co" data-cat="Branding" data-img="https://images.unsplash.com/photo-1753837787691-84a06d715d24?auto=format&fit=crop&w=1200&q=80" data-desc="Kalahari needed a brand that could hold its own next to international roasters. We developed a full identity — wordmark, palette, packaging and a one-page site — built around the warmth of single-origin storytelling.">
+          <div class="work-shot"><span class="num">04</span><img src="https://images.unsplash.com/photo-1753837787691-84a06d715d24?auto=format&fit=crop&w=900&q=80" alt="Brand identity and packaging for Kalahari and Co coffee roastery" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+          <div class="work-meta"><h3>Kalahari &amp; Co</h3><span class="cat">Branding</span></div>
+          <p>Full identity system for a boutique coffee roastery, from logo to packaging.</p>
+        </article>
+        <article class="work-card open-modal" data-title="Pulse Fitness Studio" data-cat="Branding" data-img="https://images.unsplash.com/photo-1758957646695-ec8bce3df462?auto=format&fit=crop&w=1200&q=80" data-desc="Pulse wanted an identity as high-energy as their classes. We built a bold visual system paired with a booking-first website that lets members reserve in two taps — class bookings rose 41% in the first month.">
+          <div class="work-shot"><span class="num">05</span><img src="https://images.unsplash.com/photo-1758957646695-ec8bce3df462?auto=format&fit=crop&w=900&q=80" alt="Brand identity and booking site for Pulse Fitness Studio" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+          <div class="work-meta"><h3>Pulse Fitness Studio</h3><span class="cat">Branding</span></div>
+          <p>Bold identity and class-booking website for a boutique fitness studio.</p>
+        </article>
+      </div>
+      <div class="work-progress"><i id="workProgress"></i></div>
+    </div>
+  </section>
+
+  <section class="section section--bone">
+    <div class="wrap">
+      <div class="sec-head"><h2 class="display-m anim">What we do.</h2><p class="lead muted-bone anim">Three disciplines, one studio — so design, build and brand stay in sync instead of fighting each other.</p></div>
+      <div class="svc-grid cols-3">
+        <a href="#services" class="svc anim" data-link><span class="svc-num">01 / Web Design</span><h3>Web Design</h3><p>Conversion-led interface design built around your real content and your customers' journey.</p></a>
+        <a href="#services" class="svc anim" data-link><span class="svc-num">02 / Web Development</span><h3>Web Development</h3><p>Fast, secure, hand-built sites — from marketing pages to custom web applications.</p></a>
+        <a href="#services" class="svc anim" data-link><span class="svc-num">03 / Brand Identity</span><h3>Brand Identity</h3><p>Logos, colour systems and visual language that make your business instantly recognisable.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--bone rule-top--bone">
+    <div class="wrap">
+      <div class="sec-head"><h2 class="display-m anim">Don't take<br>our word for it.</h2><p class="lead muted-bone anim">The work speaks — but so do the people we've built it for.</p></div>
+      <div class="quotes">
+        <article class="quote anim"><div class="stars" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.7 4.3L15.5 19 10 15.6 4.5 19l1.2-7.1L1 7.6l6.4-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.7 4.3L15.5 19 10 15.6 4.5 19l1.2-7.1L1 7.6l6.4-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.7 4.3L15.5 19 10 15.6 4.5 19l1.2-7.1L1 7.6l6.4-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.7 4.3L15.5 19 10 15.6 4.5 19l1.2-7.1L1 7.6l6.4-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.7 4.3L15.5 19 10 15.6 4.5 19l1.2-7.1L1 7.6l6.4-.7z"/></svg></div><blockquote>"Professional and communicated well throughout the project. The website is user-friendly and looks good on both desktop and mobile — I'd recommend them to others."</blockquote><div class="who"><div class="av">MK</div><div><b>Mike K.</b><span>Orange Group</span></div></div></article>
+        <article class="quote anim"><div class="stars" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.7 4.3L15.5 19 10 15.6 4.5 19l1.2-7.1L1 7.6l6.4-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.7 4.3L15.5 19 10 15.6 4.5 19l1.2-7.1L1 7.6l6.4-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.7 4.3L15.5 19 10 15.6 4.5 19l1.2-7.1L1 7.6l6.4-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.7 4.3L15.5 19 10 15.6 4.5 19l1.2-7.1L1 7.6l6.4-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.7 4.3L15.5 19 10 15.6 4.5 19l1.2-7.1L1 7.6l6.4-.7z"/></svg></div><blockquote>"When it comes to brand identity and websites, Webxperts is always my go-to. I pick up the phone for a quick chat with Charlie, and he never disappoints. Highly recommend!"</blockquote><div class="who"><div class="av">★</div><div><b>Verified Google review</b><span>Brand identity &amp; website client</span></div></div></article>
+        <article class="quote anim"><div class="stars" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.7 4.3L15.5 19 10 15.6 4.5 19l1.2-7.1L1 7.6l6.4-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.7 4.3L15.5 19 10 15.6 4.5 19l1.2-7.1L1 7.6l6.4-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.7 4.3L15.5 19 10 15.6 4.5 19l1.2-7.1L1 7.6l6.4-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.7 4.3L15.5 19 10 15.6 4.5 19l1.2-7.1L1 7.6l6.4-.7z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.6 5.9L19 7.6l-4.7 4.3L15.5 19 10 15.6 4.5 19l1.2-7.1L1 7.6l6.4-.7z"/></svg></div><blockquote>"The greatest service I've ever come across — Charlie goes the extra mile. If you're searching for a web developer, this should be your stop."</blockquote><div class="who"><div class="av">★</div><div><b>Verified Google review</b><span>Web development client</span></div></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--bone">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <p class="kicker anim">About the studio</p>
+          <h2 class="display-l anim" style="margin:1.2rem 0;">A small, senior team that's sat on <em class="uv">both sides</em> of the table.</h2>
+          <p class="lead muted-bone anim">Designers and developers who've worked agency-side and in-house. We build websites the way we'd want to receive them — fast, honest about timelines, engineered to do a job.</p>
+          <div class="stats">
+            <div class="stat anim"><div class="n"><em><span class="count" data-to="8">0</span>+</em></div><div class="l">Years building for SA business</div></div>
+            <div class="stat anim"><div class="n"><em><span class="count" data-to="120">0</span>+</em></div><div class="l">Projects shipped</div></div>
+            <div class="stat anim"><div class="n"><em><span class="count" data-to="4.9" data-dec="1">0</span></em></div><div class="l">Average client rating / 5</div></div>
+          </div>
+          <a href="#about" class="btn btn-line magnetic anim" data-link>More about us</a>
+        </div>
+        <div class="split-media anim"><img data-parallax src="https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?auto=format&fit=crop&w=900&q=80" alt="The Webxperts web design and development team collaborating in their Johannesburg studio" loading="lazy"><span class="badge">Johannesburg, ZA</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--ink cta-big">
+    <div class="wrap">
+      <p class="kicker anim" style="justify-content:center;">Let's build</p>
+      <h2 class="display-l anim">Let's build something your customers <em class="uv">actually trust.</em></h2>
+      <p class="lead muted-ink anim">A 20-minute conversation about your goals — no pressure, no jargon, just a clear plan for your next website.</p>
+      <div class="hero-cta anim"><a href="#contact" class="btn btn-uv magnetic" data-link><span class="dot"></span>Book a Call</a></div>
+      <p class="note mono muted-ink anim">hello@webxperts.co.za · +27 65 961 8206 · Johannesburg, South Africa</p>
+    </div>
+  </section>
+
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="page" data-page="about" aria-labelledby="about-h1">
+  <section class="hero page-hero section--ink">
+    <div class="hero-glow" aria-hidden="true" style="left:-10%; right:auto; top:0;"></div>
+    <div class="wrap hero-inner">
+      <p class="kicker reveal-hero-el">About Webxperts</p>
+      <h1 class="display-l" id="about-h1" style="margin:1.4rem 0;">
+        <span class="rh-mask"><span class="rh-line">We build the web presence</span></span>
+        <span class="rh-mask"><span class="rh-line">ambitious businesses <em class="uv">deserve.</em></span></span>
+      </h1>
+      <p class="lead muted-ink reveal-hero-el">A senior, Johannesburg-based studio — built for South African businesses done settling for generic websites.</p>
+    </div>
+  </section>
+
+  <section class="section section--bone">
+    <div class="wrap">
+      <div class="split flip">
+        <div class="split-media anim"><img data-parallax src="https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?auto=format&fit=crop&w=900&q=80" alt="Webxperts designers and developers reviewing a project together" loading="lazy"><span class="badge">Est. Johannesburg</span></div>
+        <div>
+          <p class="kicker anim">Our story</p>
+          <h2 class="display-m anim" style="margin:1.2rem 0;">Built out of frustration with the agency status quo.</h2>
+          <p class="lead muted-bone anim" style="margin-bottom:1.2rem;">Webxperts started with a simple frustration: too many South African businesses were stuck with slow, generic websites that looked fine in 2015 and were quietly losing them customers in 2026.</p>
+          <p class="muted-bone anim" style="line-height:1.7;">We're a small, senior team — designers and developers who've sat on both sides of the table. That's why we build websites the way we'd want to receive them: fast, honest about timelines, and engineered to do a job, not just exist.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--ink">
+    <div class="wrap">
+      <div class="sec-head"><h2 class="display-m anim">World-class web,<br>without the agency bloat.</h2><p class="lead muted-ink anim">To make exceptional design and engineering accessible to South African businesses — without six-month timelines or bloated retainers.</p></div>
+      <div class="svc-grid cols-3">
+        <div class="svc anim"><span class="svc-num">Value 01</span><h3>Craft over templates</h3><p>Every project starts from a blank canvas, never a recycled theme with your logo swapped in.</p></div>
+        <div class="svc anim"><span class="svc-num">Value 02</span><h3>Speed without shortcuts</h3><p>Fast delivery and fast-loading sites — never at the cost of quality.</p></div>
+        <div class="svc anim"><span class="svc-num">Value 03</span><h3>Straight talk</h3><p>Fixed scope, fixed price. You always know what you're getting and what it costs.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--bone">
+    <div class="wrap">
+      <p class="kicker anim">What makes us different</p>
+      <h2 class="display-m anim" style="margin:1.2rem 0 2.6rem;">Four things you won't get from a typical agency.</h2>
+      <div class="diffs">
+        <article class="diff anim"><span class="dt">A</span><h3>No templates, ever</h3><p>Every site is designed from a blank canvas around your brand and customers — not a recycled theme with the logo swapped.</p></article>
+        <article class="diff anim"><span class="dt">B</span><h3>Direct line to your team</h3><p>You work directly with the designer and developer building your site — no account managers relaying messages.</p></article>
+        <article class="diff anim"><span class="dt">C</span><h3>Fixed scope, fixed price</h3><p>You'll know exactly what you're getting and what it costs before a single line of code is written.</p></article>
+        <article class="diff anim"><span class="dt">D</span><h3>Care that outlasts launch</h3><p>We stick around after go-live with support, updates and small improvements — not a one-and-done handover.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--ink cta-big">
+    <div class="wrap">
+      <p class="kicker anim" style="justify-content:center;">Get in touch</p>
+      <h2 class="display-l anim">Curious if we're the <em class="uv">right fit?</em></h2>
+      <p class="lead muted-ink anim">No pitch deck, no pressure — just a conversation about your business and your goals.</p>
+      <div class="hero-cta anim"><a href="#contact" class="btn btn-uv magnetic" data-link><span class="dot"></span>Book a Call</a></div>
+    </div>
+  </section>
+</section>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="page" data-page="services" aria-labelledby="services-h1">
+  <section class="hero page-hero section--ink">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <p class="kicker reveal-hero-el">What we do</p>
+      <h1 class="display-l" id="services-h1" style="margin:1.4rem 0;">
+        <span class="rh-mask"><span class="rh-line">Everything you need to</span></span>
+        <span class="rh-mask"><span class="rh-line">look, load and <em class="uv">rank</em></span></span>
+        <span class="rh-mask"><span class="rh-line">like the best in your field.</span></span>
+      </h1>
+      <p class="lead muted-ink reveal-hero-el">From first wireframe to ongoing care — design, development and brand, all under one Johannesburg roof.</p>
+    </div>
+  </section>
+
+  <section class="section section--ink rule-top--ink">
+    <div class="wrap">
+      <div class="svc-grid cols-3">
+        <div class="svc anim"><span class="svc-num">Service 01</span><h3>Web Design</h3><p>Conversion-led UI/UX built around your real content and customers — not placeholder layouts.</p><div class="svc-chips"><span>UI / UX</span><span>Responsive</span><span>Prototyping</span></div></div>
+        <div class="svc anim"><span class="svc-num">Service 02</span><h3>Web Development</h3><p>Hand-coded, fast and secure builds — from marketing sites to custom web apps and portals.</p><div class="svc-chips"><span>Custom code</span><span>CMS</span><span>Performance</span></div></div>
+        <div class="svc anim"><span class="svc-num">Service 03</span><h3>Brand Identity</h3><p>Logos, colour systems, type and visual language that make you instantly recognisable.</p><div class="svc-chips"><span>Logo design</span><span>Guidelines</span><span>Systems</span></div></div>
+        <div class="svc anim"><span class="svc-num">Service 04</span><h3>SEO &amp; Performance</h3><p>Technical SEO, page-speed optimisation and clean semantic code built in from day one.</p><div class="svc-chips"><span>Technical SEO</span><span>Web Vitals</span><span>Analytics</span></div></div>
+        <div class="svc anim"><span class="svc-num">Service 05</span><h3>Care &amp; Support</h3><p>Ongoing updates, fixes and improvements after launch so your site keeps performing.</p><div class="svc-chips"><span>Maintenance</span><span>Updates</span><span>Priority support</span></div></div>
+        <a href="#contact" class="svc anim" data-link><span class="svc-num">→ Not sure?</span><h3>Let's scope it together</h3><p>Tell us the goal and we'll recommend the right mix — on a free call, no obligation.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--ink rule-top--ink">
+    <div class="wrap">
+      <div class="sec-head"><h2 class="display-m anim">A clear, five-step process — every time.</h2><p class="lead muted-ink anim">No black boxes. You'll know the scope, timeline and budget before any work begins — and exactly what's happening at each stage.</p></div>
+      <div class="steps">
+        <div class="step"><span class="sn">Step 01 / 05</span><h3>Free consultation</h3><p>We start with a free consultation to understand your business and what you want to achieve online.</p></div>
+        <div class="step"><span class="sn">Step 02 / 05</span><h3>Discuss needs &amp; goals</h3><p>We dig into your goals, your customers and what success looks like — so the plan fits your business.</p></div>
+        <div class="step"><span class="sn">Step 03 / 05</span><h3>Proposal</h3><p>You receive a clear proposal that outlines the scope of work, timeline and budget — no surprises later.</p></div>
+        <div class="step"><span class="sn">Step 04 / 05</span><h3>Approve</h3><p>Once you're happy and approve the proposal, we lock in the scope and schedule your project.</p></div>
+        <div class="step"><span class="sn">Step 05 / 05</span><h3>Start &amp; launch</h3><p>We design, build and launch your project — then stay on to support it after go-live.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--bone">
+    <div class="wrap">
+      <p class="kicker anim">FAQ</p>
+      <h2 class="display-m anim" style="margin:1.2rem 0 2.4rem;">Questions we get asked a lot.</h2>
+      <div class="faq" id="faq">
+        <div class="faq-item"><button class="faq-q">How much does a new website cost?<span class="faq-ic" aria-hidden="true"></span></button><div class="faq-a"><div><p>Every project is scoped individually based on pages, features and complexity. After a free consultation you'll get a proposal with a clear, fixed quote before any work begins. We're flexible on payment too — upfront, monthly instalments for larger projects, or pay-as-you-go for smaller ones.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q">How long does a project take?<span class="faq-ic" aria-hidden="true"></span></button><div class="faq-a"><div><p>It depends on scope, but most marketing websites take a few weeks from kickoff to launch. We'll give you a realistic timeline before we start and keep you updated throughout.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q">Do you offer ongoing support after launch?<span class="faq-ic" aria-hidden="true"></span></button><div class="faq-a"><div><p>Yes — every site comes with a support window after launch, and we offer ongoing care plans for updates, fixes and small improvements so your site doesn't go stale.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q">Will my website be optimised for SEO?<span class="faq-ic" aria-hidden="true"></span></button><div class="faq-a"><div><p>Yes. Clean semantic code, fast load times and on-page SEO are part of every build by default — not an upsell we add later.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q">Can you redesign my existing website?<span class="faq-ic" aria-hidden="true"></span></button><div class="faq-a"><div><p>Absolutely — many projects start as a redesign of an underperforming site. We'll audit what's working, what isn't, and rebuild around it.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q">Do you only work with businesses in South Africa?<span class="faq-ic" aria-hidden="true"></span></button><div class="faq-a"><div><p>We're based in Johannesburg and love working with local businesses, but we also work remotely with clients across Africa and beyond.</p></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--ink cta-big">
+    <div class="wrap">
+      <p class="kicker anim" style="justify-content:center;">Where to start</p>
+      <h2 class="display-l anim">Not sure which service <em class="uv">you need?</em></h2>
+      <p class="lead muted-ink anim">Let's figure it out together on a free call — no obligation, just clarity.</p>
+      <div class="hero-cta anim"><a href="#contact" class="btn btn-uv magnetic" data-link><span class="dot"></span>Book a Call</a></div>
+    </div>
+  </section>
+</section>
+
+<!-- ===================== PORTFOLIO ===================== -->
+<section class="page" data-page="portfolio" aria-labelledby="portfolio-h1">
+  <section class="hero page-hero section--ink">
+    <div class="hero-glow" aria-hidden="true" style="left:-10%; right:auto;"></div>
+    <div class="wrap hero-inner">
+      <p class="kicker reveal-hero-el">Selected work</p>
+      <h1 class="display-l" id="portfolio-h1" style="margin:1.4rem 0;">
+        <span class="rh-mask"><span class="rh-line">A few projects we're</span></span>
+        <span class="rh-mask"><span class="rh-line">proud to put our <em class="uv">name</em> on.</span></span>
+      </h1>
+      <p class="lead muted-ink reveal-hero-el">Design, development and brand work for South African businesses across logistics, beauty, real estate, fintech, food and fitness.</p>
+    </div>
+  </section>
+
+  <section class="section section--bone">
+    <div class="wrap">
+      <div class="filters" role="group" aria-label="Filter portfolio">
+        <button class="filter active" data-filter="all">All work</button>
+        <button class="filter" data-filter="web-design">Web Design</button>
+        <button class="filter" data-filter="web-development">Web Development</button>
+        <button class="filter" data-filter="branding">Branding</button>
+      </div>
+      <div class="pf-grid" id="pfGrid">
+        <article class="pf open-modal anim" data-cat-key="web-development" data-title="Stonebridge Logistics" data-cat="Web Development" data-img="https://images.unsplash.com/photo-1569748130764-3fed0c102c59?auto=format&fit=crop&w=1200&q=80" data-desc="We rebuilt Stonebridge's platform from the ground up — a hand-coded dashboard where customers request quotes and track shipments in real time. Load times dropped from 6.2s to under 1.4s, and online quote requests rose 64% in the first quarter.">
+          <div class="pf-shot"><img src="https://images.unsplash.com/photo-1569748130764-3fed0c102c59?auto=format&fit=crop&w=900&q=80" alt="Quote calculator and tracking dashboard for Stonebridge Logistics" loading="lazy"><div class="ov"><span>View case study →</span></div></div>
+          <div class="pf-meta"><h3>Stonebridge Logistics</h3><span class="cat">Web Dev</span></div>
+          <p>Custom quote calculator and live tracking dashboard.</p>
+        </article>
+        <article class="pf open-modal anim" data-cat-key="web-design" data-title="Aurelia Skincare" data-cat="Web Design" data-img="https://images.unsplash.com/photo-1575248208233-c777219911e2?auto=format&fit=crop&w=1200&q=80" data-desc="Aurelia needed a site as considered as their formulations. We designed an editorial layout with large product photography, ingredient storytelling and a streamlined checkout — average order value rose 38% within two months.">
+          <div class="pf-shot"><img src="https://images.unsplash.com/photo-1575248208233-c777219911e2?auto=format&fit=crop&w=900&q=80" alt="Editorial ecommerce website design for Aurelia Skincare" loading="lazy"><div class="ov"><span>View case study →</span></div></div>
+          <div class="pf-meta"><h3>Aurelia Skincare</h3><span class="cat">Web Design</span></div>
+          <p>Editorial ecommerce for a premium skincare brand.</p>
+        </article>
+        <article class="pf open-modal anim" data-cat-key="web-development" data-title="Horizon Realty" data-cat="Web Development" data-img="https://images.unsplash.com/photo-1758846946191-dfe1cd91779b?auto=format&fit=crop&w=1200&q=80" data-desc="Horizon's old site couldn't handle their growing catalogue. We built a custom property platform with map-based search, instant filtering and a CMS their team runs without a developer — and it now ranks on page one for their core local terms.">
+          <div class="pf-shot"><img src="https://images.unsplash.com/photo-1758846946191-dfe1cd91779b?auto=format&fit=crop&w=900&q=80" alt="Property listing platform with map search for Horizon Realty" loading="lazy"><div class="ov"><span>View case study →</span></div></div>
+          <div class="pf-meta"><h3>Horizon Realty</h3><span class="cat">Web Dev</span></div>
+          <p>Property platform with map-based search.</p>
+        </article>
+        <article class="pf open-modal anim" data-cat-key="branding" data-title="Kalahari &amp; Co" data-cat="Branding" data-img="https://images.unsplash.com/photo-1753837787691-84a06d715d24?auto=format&fit=crop&w=1200&q=80" data-desc="Kalahari needed a brand that could hold its own next to international roasters. We developed a full identity — wordmark, palette, packaging and a one-page site — built around the warmth of single-origin storytelling.">
+          <div class="pf-shot"><img src="https://images.unsplash.com/photo-1753837787691-84a06d715d24?auto=format&fit=crop&w=900&q=80" alt="Brand identity and packaging for Kalahari and Co coffee roastery" loading="lazy"><div class="ov"><span>View case study →</span></div></div>
+          <div class="pf-meta"><h3>Kalahari &amp; Co</h3><span class="cat">Branding</span></div>
+          <p>Full identity for a boutique coffee roastery.</p>
+        </article>
+        <article class="pf open-modal anim" data-cat-key="web-design" data-title="Pioneer Fintech" data-cat="Web Design" data-img="https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?auto=format&fit=crop&w=1200&q=80" data-desc="Ahead of a funding round, Pioneer needed a landing site that built credibility fast. We designed a clean, confident layout with clear product explainers and social proof, helping the team book significantly more investor and pilot-customer calls.">
+          <div class="pf-shot"><img src="https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?auto=format&fit=crop&w=900&q=80" alt="Conversion-focused landing site for Pioneer Fintech" loading="lazy"><div class="ov"><span>View case study →</span></div></div>
+          <div class="pf-meta"><h3>Pioneer Fintech</h3><span class="cat">Web Design</span></div>
+          <p>Conversion landing site for an early-stage startup.</p>
+        </article>
+        <article class="pf open-modal anim" data-cat-key="branding" data-title="Savanna Eats" data-cat="Branding" data-img="https://images.unsplash.com/photo-1516749396351-ab12ad535d7c?auto=format&fit=crop&w=1200&q=80" data-desc="Savanna Eats wanted packaging that stood out the moment a rider handed it over. We built a bold, appetite-driven identity with a flexible logo system and packaging templates that scale across their growing menu.">
+          <div class="pf-shot"><img src="https://images.unsplash.com/photo-1516749396351-ab12ad535d7c?auto=format&fit=crop&w=900&q=80" alt="Logo and packaging identity for Savanna Eats food delivery brand" loading="lazy"><div class="ov"><span>View case study →</span></div></div>
+          <div class="pf-meta"><h3>Savanna Eats</h3><span class="cat">Branding</span></div>
+          <p>Logo and packaging for a food delivery brand.</p>
+        </article>
+        <article class="pf open-modal anim" data-cat-key="web-development" data-title="Bluerock Capital" data-cat="Web Development" data-img="https://images.unsplash.com/photo-1758846946191-dfe1cd91779b?auto=format&fit=crop&w=1200&q=80" data-desc="Bluerock needed a portal where clients securely view portfolio updates alongside a marketing site that builds trust with prospects. We delivered both on one secure platform with strong authentication and a confidence-inspiring design.">
+          <div class="pf-shot"><img src="https://images.unsplash.com/photo-1758846946191-dfe1cd91779b?auto=format&fit=crop&w=900&q=80" alt="Secure client portal for Bluerock Capital advisory firm" loading="lazy"><div class="ov"><span>View case study →</span></div></div>
+          <div class="pf-meta"><h3>Bluerock Capital</h3><span class="cat">Web Dev</span></div>
+          <p>Secure client portal and marketing site.</p>
+        </article>
+        <article class="pf open-modal anim" data-cat-key="web-design" data-title="Northwind Trading" data-cat="Web Design" data-img="https://images.unsplash.com/photo-1569748130764-3fed0c102c59?auto=format&fit=crop&w=1200&q=80" data-desc="Northwind needed a catalogue site that worked for buyers across multiple African markets. We designed a clear, searchable product catalogue with multi-currency pricing and bulk-enquiry forms that cut their sales team's admin time significantly.">
+          <div class="pf-shot"><img src="https://images.unsplash.com/photo-1569748130764-3fed0c102c59?auto=format&fit=crop&w=900&q=80" alt="B2B catalogue website with multi-currency pricing for Northwind Trading" loading="lazy"><div class="ov"><span>View case study →</span></div></div>
+          <div class="pf-meta"><h3>Northwind Trading</h3><span class="cat">Web Design</span></div>
+          <p>B2B catalogue with multi-currency pricing.</p>
+        </article>
+        <article class="pf open-modal anim" data-cat-key="branding" data-title="Pulse Fitness Studio" data-cat="Branding" data-img="https://images.unsplash.com/photo-1758957646695-ec8bce3df462?auto=format&fit=crop&w=1200&q=80" data-desc="Pulse wanted an identity as high-energy as their classes. We built a bold visual system paired with a booking-first website that lets members reserve in two taps — class bookings rose 41% in the first month.">
+          <div class="pf-shot"><img src="https://images.unsplash.com/photo-1758957646695-ec8bce3df462?auto=format&fit=crop&w=900&q=80" alt="Brand identity and booking website for Pulse Fitness Studio" loading="lazy"><div class="ov"><span>View case study →</span></div></div>
+          <div class="pf-meta"><h3>Pulse Fitness Studio</h3><span class="cat">Branding</span></div>
+          <p>Identity and class-booking site for a boutique gym.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--ink cta-big">
+    <div class="wrap">
+      <p class="kicker anim" style="justify-content:center;">Like what you see?</p>
+      <h2 class="display-l anim">Let's create <em class="uv">yours.</em></h2>
+      <div class="hero-cta anim"><a href="#contact" class="btn btn-uv magnetic" data-link><span class="dot"></span>Book a Call</a></div>
+    </div>
+  </section>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="page" data-page="contact" aria-labelledby="contact-h1">
+  <section class="hero page-hero section--ink">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <p class="kicker reveal-hero-el">Get in touch</p>
+      <h1 class="display-l" id="contact-h1" style="margin:1.4rem 0;">
+        <span class="rh-mask"><span class="rh-line">Let's start</span></span>
+        <span class="rh-mask"><span class="rh-line">your <em class="uv">project.</em></span></span>
+      </h1>
+      <p class="lead muted-ink reveal-hero-el">Tell us about your business and what you're trying to achieve — we'll reply within one business day with next steps.</p>
+    </div>
+  </section>
+
+  <section class="section section--bone">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div>
+          <!-- To connect to a real inbox: set a form action to your endpoint (Formspree/Getform),
+               or POST the data via fetch() to your own function. The handler below simulates success. -->
+          <form id="cform" novalidate>
+            <div class="field" id="fName"><label for="iName">Full name</label><input id="iName" name="name" type="text" autocomplete="name" required><p class="err">Please enter your name.</p></div>
+            <div class="field" id="fEmail"><label for="iEmail">Email address</label><input id="iEmail" name="email" type="email" autocomplete="email" required><p class="err">Please enter a valid email address.</p></div>
+            <div class="field" id="fPhone"><label for="iPhone">Phone number</label><input id="iPhone" name="phone" type="tel" autocomplete="tel"></div>
+            <div class="field" id="fMsg"><label for="iMsg">Tell us about your project</label><textarea id="iMsg" name="message" required></textarea><p class="err">Please tell us a little about your project.</p></div>
+            <button type="submit" class="btn btn-uv magnetic" id="cbtn" style="width:100%; justify-content:center;"><span class="dot"></span>Send Message</button>
+          </form>
+          <div id="sent" role="status"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><h3 class="display-s">Message sent.</h3><p class="muted-bone" style="margin-top:.6rem;">Thanks for reaching out — we'll be in touch within one business day.</p><button class="btn btn-line" id="resetBtn" style="margin-top:1.4rem;">Send another</button></div>
+        </div>
+        <div class="info">
+          <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg><div><div class="l">Email</div><div class="v">hello@webxperts.co.za</div></div></div>
+          <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.4 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg><div><div class="l">Phone</div><div class="v">+27 65 961 8206</div></div></div>
+          <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><div class="l">Studio</div><div class="v">Johannesburg, South Africa</div></div></div>
+          <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg><div><div class="l">Hours</div><div class="v">Mon – Fri, 8am – 5pm SAST</div></div></div>
+          <div class="socials">
+            <a href="https://www.instagram.com/webxperts" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="#ECE6D9" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
+            <a href="https://wa.me/27659618206" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="#ECE6D9" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3z"/><path d="M8.5 8.2c.2-.5.4-.5.6-.5h.5c.2 0 .4 0 .6.5l.7 1.6c.1.2 0 .4-.1.6l-.4.5c-.1.2-.2.3 0 .6a6 6 0 0 0 2.6 2.3c.3.1.4 0 .6-.1l.5-.6c.2-.2.3-.2.6-.1l1.5.8c.3.1.4.2.4.4 0 .4-.2 1.1-.6 1.3-.4.3-1.2.6-2 .4a8 8 0 0 1-5.3-4.6c-.3-.8-.1-1.6.1-2z"/></svg></a>
+            <a href="https://www.facebook.com/webxperts" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="#ECE6D9" stroke-width="1.6"><path d="M15 4h-2a4 4 0 0 0-4 4v2H7v3h2v7h3v-7h2.5l.5-3H12V8a1 1 0 0 1 1-1h2z"/></svg></a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#home" class="brand" data-link aria-label="Webxperts — home"><svg viewBox="0 0 640 640" fill="var(--brand)" aria-hidden="true"><polygon points="553.3,13.6 516.7,70.9 415,230.3 374,294.4 297.8,413.7 254,482.3 73.8,511.4 121.6,436.6 202.4,310.1 203,309.2 278.5,191 279.1,190 312.4,137.8 345.9,85.4 385.8,22.9"/><polygon points="37.2,212.8 94.7,276.1 150.6,337.7 151.2,336.8 226.7,218.7 182.8,170.4"/><polygon points="287.1,482.3 405.5,612.8 602.8,626.4 363.3,363"/></svg><b>Webxperts</b></a>
+        <p>A Johannesburg web design and development studio building fast, conversion-focused websites and brand identities for ambitious South African businesses.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/webxperts" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="#ECE6D9" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
+          <a href="https://wa.me/27659618206" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="#ECE6D9" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3z"/><path d="M8.5 8.2c.2-.5.4-.5.6-.5h.5c.2 0 .4 0 .6.5l.7 1.6c.1.2 0 .4-.1.6l-.4.5c-.1.2-.2.3 0 .6a6 6 0 0 0 2.6 2.3c.3.1.4 0 .6-.1l.5-.6c.2-.2.3-.2.6-.1l1.5.8c.3.1.4.2.4.4 0 .4-.2 1.1-.6 1.3-.4.3-1.2.6-2 .4a8 8 0 0 1-5.3-4.6c-.3-.8-.1-1.6.1-2z"/></svg></a>
+          <a href="https://www.facebook.com/webxperts" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="#ECE6D9" stroke-width="1.6"><path d="M15 4h-2a4 4 0 0 0-4 4v2H7v3h2v7h3v-7h2.5l.5-3H12V8a1 1 0 0 1 1-1h2z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Navigate</h4><ul><li><a href="#home" data-link>Home</a></li><li><a href="#about" data-link>About</a></li><li><a href="#services" data-link>Services</a></li><li><a href="#portfolio" data-link>Portfolio</a></li><li><a href="#contact" data-link>Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="#services" data-link>Web Design</a></li><li><a href="#services" data-link>Web Development</a></li><li><a href="#services" data-link>Brand Identity</a></li><li><a href="#services" data-link>SEO &amp; Performance</a></li><li><a href="#services" data-link>Care &amp; Support</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><span>hello@webxperts.co.za</span></li><li><span>+27 65 961 8206</span></li><li><span>Johannesburg, ZA</span></li><li><a href="#contact" data-link>Book a Free Call →</a></li></ul></div>
+    </div>
+    <div class="footer-big" aria-hidden="true">Webxperts</div>
+    <div class="footer-bottom"><span class="mono">© <span id="yr">2026</span> Webxperts. All rights reserved.</span><span class="mono">Designed &amp; built in Johannesburg</span></div>
+  </div>
+</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="modal-box">
+    <button class="modal-x" id="mClose" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4l16 16M20 4 4 20"/></svg></button>
+    <div class="modal-media"><img id="mImg" src="" alt=""></div>
+    <div class="modal-body"><span class="cat" id="mCat"></span><h3 id="mTitle"></h3><p id="mDesc"></p><a href="#contact" class="btn btn-uv magnetic" data-link>Discuss a Similar Project</a></div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script>
+(function(){
+  "use strict";
+  var RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasGSAP = typeof window.gsap !== 'undefined';
+  var hasST = typeof window.ScrollTrigger !== 'undefined';
+  var hasLenis = typeof window.Lenis !== 'undefined';
+  if(hasGSAP && hasST){ gsap.registerPlugin(ScrollTrigger); }
+  var qs=function(s,c){return (c||document).querySelector(s);};
+  var qsa=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s));};
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  /* ---------- META ---------- */
+  var META = {
+    home:{t:"Webxperts — Web Design & Development Studio, Johannesburg",d:"Webxperts is a Johannesburg web design and development studio building fast, conversion-focused websites and brand identities. Book a strategy call."},
+    about:{t:"About — Webxperts Web Design & Development Studio",d:"Meet Webxperts, a senior Johannesburg web design and development studio building honest, fast, fixed-scope websites for South African businesses."},
+    services:{t:"Services — Web Design, Development & Brand Identity | Webxperts",d:"Web design, web development, brand identity, SEO and ongoing support for South African businesses. Pricing on request."},
+    portfolio:{t:"Portfolio — Web Design & Development Work | Webxperts",d:"Browse Webxperts' web design, development and brand identity projects across logistics, beauty, real estate, fintech, food and fitness."},
+    contact:{t:"Contact — Book a Call | Webxperts",d:"Get in touch with Webxperts, a Johannesburg web design and development studio. Book a free strategy call or send a message about your project."}
+  };
+  function setMeta(r){var m=META[r]||META.home; document.title=m.t; var md=qs('meta[name="description"]'); if(md) md.setAttribute('content',m.d);}
+
+  /* ---------- LENIS ---------- */
+  var lenis=null;
+  if(hasLenis && !RM){
+    lenis = new Lenis({ lerp:0.1, wheelMultiplier:1, smoothWheel:true });
+    if(hasGSAP && hasST){
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add(function(t){ lenis.raf(t*1000); });
+      gsap.ticker.lagSmoothing(0);
+    } else {
+      function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }
+      requestAnimationFrame(raf);
+    }
+  }
+  function scrollTop(){ if(lenis){ lenis.scrollTo(0,{immediate:true}); } window.scrollTo(0,0); }
+
+  /* ---------- HEADER ---------- */
+  var header=document.getElementById('header');
+  function hScroll(){ header.classList.toggle('scrolled',(window.scrollY||document.documentElement.scrollTop)>40); }
+  if(lenis){ lenis.on('scroll',hScroll); } window.addEventListener('scroll',hScroll,{passive:true}); hScroll();
+
+  /* ---------- MOBILE MENU ---------- */
+  var mt=document.getElementById('menuToggle'), mm=document.getElementById('mobileMenu');
+  function openMM(){ mm.classList.add('open'); mt.setAttribute('aria-expanded','true'); if(lenis) lenis.stop(); document.body.style.overflow='hidden';
+    if(hasGSAP && !RM) gsap.fromTo(qsa('.mm-links a',mm),{y:34,opacity:0},{y:0,opacity:1,duration:.5,stagger:.06,ease:'power3.out',delay:.08}); }
+  function closeMM(){ mm.classList.remove('open'); mt.setAttribute('aria-expanded','false'); if(lenis) lenis.start(); document.body.style.overflow=''; }
+  mt.addEventListener('click',function(){ mm.classList.contains('open')?closeMM():openMM(); });
+
+  /* ---------- MAGNETIC BUTTONS ---------- */
+  function initMagnetic(scope){
+    if(RM || !window.matchMedia('(pointer:fine)').matches || !hasGSAP) return;
+    qsa('.magnetic',scope).forEach(function(el){
+      if(el._mag) return; el._mag=true;
+      el.addEventListener('mousemove',function(e){ var r=el.getBoundingClientRect(); var x=e.clientX-r.left-r.width/2; var y=e.clientY-r.top-r.height/2; gsap.to(el,{x:x*0.35,y:y*0.4,duration:.4,ease:'power3.out'}); });
+      el.addEventListener('mouseleave',function(){ gsap.to(el,{x:0,y:0,duration:.5,ease:'elastic.out(1,0.4)'}); });
+    });
+  }
+
+  /* ---------- CYCLING HERO WORD ---------- */
+  var cycleTween=null;
+  function startCycle(){
+    var cyc=qs('.page.active #cycle'); if(!cyc) return;
+    var track=qs('.cycle-track',cyc); var items=qsa('span',track); if(items.length<2) return;
+    if(RM || !hasGSAP){ return; }
+    var i=0, h=cyc.clientHeight;
+    function step(){
+      i++;
+      gsap.to(track,{ y:-h*i, duration:.7, ease:'power3.inOut', onComplete:function(){
+        if(i>=items.length-1){ i=0; gsap.set(track,{y:0}); }
+        cyc.setAttribute('aria-label', items[i].textContent);
+      }});
+    }
+    cycleTween = gsap.delayedCall(1.4, function rep(){ step(); cycleTween=gsap.delayedCall(2.1,rep); });
+  }
+  function stopCycle(){ if(cycleTween){ cycleTween.kill(); cycleTween=null; } }
+
+  /* ---------- HERO ENTRANCE ---------- */
+  function heroEntrance(pageEl){
+    var lines=qsa('.rh-line',pageEl), els=qsa('.reveal-hero-el',pageEl);
+    if(!hasGSAP || RM){ return; }
+    gsap.set(lines,{y:'110%'}); gsap.set(els,{y:18,opacity:0});
+    var tl=gsap.timeline();
+    tl.to(lines,{y:'0%',duration:.95,stagger:.09,ease:'power4.out'})
+      .to(els,{y:0,opacity:1,duration:.7,stagger:.12,ease:'power3.out'},'-=.55');
+  }
+
+  /* ---------- PER-PAGE GSAP CONTEXT ---------- */
+  var ctx=null;
+  function buildPage(pageEl){
+    if(ctx){ ctx.revert(); ctx=null; }
+    if(!hasGSAP || !hasST){ return; }
+    ctx = gsap.context(function(){
+      if(!RM){
+        qsa('.anim',pageEl).forEach(function(el){
+          gsap.fromTo(el,{y:30,opacity:0},{y:0,opacity:1,duration:.8,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}});
+        });
+        qsa('.split-media [data-parallax]',pageEl).forEach(function(img){
+          gsap.fromTo(img,{yPercent:-8},{yPercent:8,ease:'none',scrollTrigger:{trigger:img.closest('.split-media'),start:'top bottom',end:'bottom top',scrub:true}});
+        });
+        qsa('.step',pageEl).forEach(function(s,i){
+          ScrollTrigger.create({trigger:s,start:'top 85%',onEnter:function(){ gsap.delayedCall(i*0.08,function(){ s.classList.add('in'); }); }});
+        });
+      }
+      // counters
+      qsa('.count',pageEl).forEach(function(c){
+        var to=parseFloat(c.dataset.to), dec=parseInt(c.dataset.dec||'0',10);
+        if(RM){ c.textContent=dec?to.toFixed(dec):to; return; }
+        var obj={v:0};
+        ScrollTrigger.create({trigger:c,start:'top 90%',once:true,onEnter:function(){
+          gsap.to(obj,{v:to,duration:1.4,ease:'power2.out',onUpdate:function(){ c.textContent=dec?obj.v.toFixed(dec):Math.round(obj.v); }});
+        }});
+      });
+      // pinned horizontal work
+      var track=qs('.work-track',pageEl);
+      if(track && !RM && window.innerWidth>=900){
+        var pin=track.closest('.work-pin'); var prog=qs('#workProgress',pageEl);
+        var getDist=function(){ return track.scrollWidth - pin.querySelector('.wrap:last-child').clientWidth + 40; };
+        gsap.to(track,{ x:function(){ return -getDist(); }, ease:'none',
+          scrollTrigger:{ trigger:pin, start:'top 64px', end:function(){ return '+='+getDist(); }, scrub:.6, pin:true, anticipatePin:1, invalidateOnRefresh:true,
+            onUpdate:function(self){ if(prog) prog.style.width=(self.progress*100)+'%'; } } });
+      }
+    }, pageEl);
+    initMagnetic(pageEl);
+    ScrollTrigger.refresh();
+  }
+
+  /* ---------- ROUTING + WIPE ---------- */
+  var pages=qsa('.page'), wipe=document.getElementById('wipe'), wipeLabel=document.getElementById('wipeLabel');
+  function setActive(route){
+    pages.forEach(function(p){ p.classList.toggle('active',p.dataset.page===route); });
+    qsa('[data-link]').forEach(function(a){ a.classList.toggle('active',(a.getAttribute('href')||'')==='#'+route); });
+  }
+  function apply(route){
+    var pageEl=qs('.page[data-page="'+route+'"]'); if(!pageEl) return;
+    setActive(route); setMeta(route); scrollTop();
+    stopCycle(); buildPage(pageEl); heroEntrance(pageEl); startCycle();
+  }
+  var transitioning=false;
+  function navigate(route, withWipe){
+    if(!META[route]) route='home';
+    closeMM();
+    if(withWipe && hasGSAP && !RM){
+      if(transitioning) return; transitioning=true;
+      wipeLabel.textContent = route.charAt(0).toUpperCase()+route.slice(1);
+      if(lenis) lenis.stop();
+      var tl=gsap.timeline({ onComplete:function(){ transitioning=false; if(lenis) lenis.start(); } });
+      tl.set(wipe,{transformOrigin:'bottom',scaleY:0})
+        .to(wipe,{scaleY:1,duration:.5,ease:'power4.inOut'})
+        .to(wipeLabel,{opacity:1,duration:.25},'-=.25')
+        .add(function(){ apply(route); })
+        .to(wipeLabel,{opacity:0,duration:.2},'+=.1')
+        .set(wipe,{transformOrigin:'top'})
+        .to(wipe,{scaleY:0,duration:.5,ease:'power4.inOut'});
+    } else {
+      apply(route);
+    }
+  }
+
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('[data-link]'); if(!a) return;
+    e.preventDefault();
+    var route=(a.getAttribute('href')||'#home').replace('#','');
+    if((location.hash.replace('#','')||'home')===route){ navigate(route,false); }
+    else{ history.pushState(null,'','#'+route); navigate(route,true); }
+  });
+  window.addEventListener('popstate',function(){ navigate(location.hash.replace('#','')||'home',true); });
+
+  /* ---------- FAQ ---------- */
+  document.addEventListener('click',function(e){
+    var q=e.target.closest('.faq-q'); if(!q) return;
+    var item=q.parentElement, wasOpen=item.classList.contains('open');
+    qsa('.faq-item',item.parentElement).forEach(function(i){ i.classList.remove('open'); });
+    if(!wasOpen){ item.classList.add('open'); }
+    if(lenis) setTimeout(function(){ ScrollTrigger.refresh(); },420);
+  });
+
+  /* ---------- PORTFOLIO FILTER ---------- */
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('.filter'); if(!b) return;
+    qsa('.filter').forEach(function(x){ x.classList.remove('active'); }); b.classList.add('active');
+    var f=b.dataset.filter, vis=[];
+    qsa('.pf').forEach(function(card){
+      var ok=f==='all'||card.dataset.catKey===f;
+      card.classList.toggle('hide',!ok); if(ok) vis.push(card);
+    });
+    if(hasGSAP && !RM) gsap.fromTo(vis,{opacity:0,y:18},{opacity:1,y:0,duration:.5,stagger:.05,ease:'power3.out'});
+    if(lenis) setTimeout(function(){ ScrollTrigger.refresh(); },300);
+  });
+
+  /* ---------- MODAL ---------- */
+  var modal=document.getElementById('modal'), mImg=document.getElementById('mImg'), mCat=document.getElementById('mCat'), mTitle=document.getElementById('mTitle'), mDesc=document.getElementById('mDesc'), lastCard=null;
+  function openModal(card){
+    lastCard=card;
+    mImg.src=card.dataset.img||''; mImg.alt=(card.dataset.title||'')+' project preview';
+    mCat.textContent=card.dataset.cat||''; mTitle.innerHTML=card.dataset.title||''; mDesc.textContent=card.dataset.desc||'';
+    modal.classList.add('open'); if(lenis) lenis.stop(); document.body.style.overflow='hidden';
+    document.getElementById('mClose').focus(); initMagnetic(modal);
+  }
+  function closeModal(){ modal.classList.remove('open'); if(lenis) lenis.start(); document.body.style.overflow=''; if(lastCard) lastCard.focus&&lastCard.focus(); }
+  document.addEventListener('click',function(e){
+    var card=e.target.closest('.open-modal'); if(card){ openModal(card); return; }
+    if(e.target===modal){ closeModal(); }
+  });
+  document.getElementById('mClose').addEventListener('click',closeModal);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&modal.classList.contains('open')) closeModal(); });
+  // make work/pf cards keyboard-activatable
+  qsa('.open-modal').forEach(function(c){ c.setAttribute('tabindex','0'); c.setAttribute('role','button');
+    c.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openModal(c); } }); });
+
+  /* ---------- CONTACT FORM ---------- */
+  var form=document.getElementById('cform');
+  if(form){
+    var sent=document.getElementById('sent'), cbtn=document.getElementById('cbtn');
+    function bad(id,v){ document.getElementById(id).classList.toggle('bad',v); }
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var n=qs('#iName').value.trim(), em=qs('#iEmail').value.trim(), ms=qs('#iMsg').value.trim();
+      var emOk=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em);
+      var nOk=n.length>1, msOk=ms.length>4;
+      bad('fName',!nOk); bad('fEmail',!emOk); bad('fMsg',!msOk);
+      if(!nOk||!emOk||!msOk) return;
+      cbtn.disabled=true; cbtn.style.opacity=.6; cbtn.querySelector('.dot').style.display='none'; cbtn.childNodes[1].textContent='Sending…';
+      setTimeout(function(){ form.classList.add('gone'); sent.classList.add('show'); cbtn.disabled=false; cbtn.style.opacity=1; initMagnetic(sent); if(lenis) ScrollTrigger.refresh(); },800);
+    });
+    document.getElementById('resetBtn').addEventListener('click',function(){
+      form.reset(); form.classList.remove('gone'); sent.classList.remove('show');
+      ['fName','fEmail','fMsg'].forEach(function(id){ bad(id,false); });
+      cbtn.querySelector('.dot').style.display=''; cbtn.childNodes[1].textContent='Send Message';
+    });
+  }
+
+  /* ---------- RESIZE: rebuild pin math ---------- */
+  var rT; window.addEventListener('resize',function(){ clearTimeout(rT); rT=setTimeout(function(){ if(hasST) ScrollTrigger.refresh(); },200); });
+
+  /* ---------- PRELOADER + BOOT ---------- */
+  var initial=location.hash.replace('#','')||'home'; if(!META[initial]) initial='home';
+  function boot(){
+    setActive(initial); setMeta(initial);
+    var pageEl=qs('.page[data-page="'+initial+'"]');
+    buildPage(pageEl); heroEntrance(pageEl); startCycle();
+  }
+  var pre=document.getElementById('preloader'), preCount=document.getElementById('preCount'), preBar=document.getElementById('preBar'), preWord=document.getElementById('preWord');
+  function killPre(){ if(pre&&pre.parentNode){ pre.parentNode.removeChild(pre); } }
+  if(RM || !hasGSAP){
+    if(pre) pre.style.display='none'; boot();
+  } else {
+    if(lenis) lenis.stop();
+    gsap.set(preWord,{yPercent:110});
+    var c={v:0};
+    var tl=gsap.timeline({ onComplete:function(){ if(lenis) lenis.start(); boot(); }});
+    tl.to(preWord,{yPercent:0,duration:.7,ease:'power4.out'})
+      .to(c,{v:100,duration:1.25,ease:'power2.inOut',onUpdate:function(){ preCount.textContent=Math.round(c.v); }},'-=.3')
+      .to(preBar,{width:'100%',duration:1.25,ease:'power2.inOut'},'<')
+      .to(pre,{yPercent:-100,duration:.7,ease:'power4.inOut'},'+=.15')
+      .add(killPre);
+  }
+
+})();
+</script>
+</body>
+</html>
