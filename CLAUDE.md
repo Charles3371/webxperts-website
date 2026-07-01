@@ -77,14 +77,31 @@ amber (`#7A5F00`)** so accent text stays legible on cream. Buttons (`.btn-uv`) a
 ## Signature interactions (preserve these when refactoring)
 
 - Preloader (word reveal + 0→100 counter), then slide up.
-- Hero: kinetic headline where the last word cycles (`#cycle` / `.cycle-track`).
-- Ultraviolet→now-gold page-transition wipe between routes (`#wipe`).
-- Home: pinned **horizontal** "Selected Work" gallery (`#homeWork` / `.work-track`,
-  disabled below 900px) with a progress bar.
+- Hero: kinetic headline where the last word cycles (`#cycle` / `.cycle-track`). Hero type
+  is capped by viewport height (`min(11.5vw, 16vh)` + a `max-height:780px` media query) so
+  the CTA always stays above the fold — don't remove that cap.
+- Gold page-transition wipe between routes (`#wipe`).
+- **Masked word reveals** on all `.display-m` / `.display-l` headings with `.anim`: JS
+  `splitWords()` wraps words in `.wm` (mask) / `.ww` (word); GSAP staggers them up on
+  scroll. Splitting only happens when motion is allowed; guard `el._split` prevents
+  re-splitting across route changes.
+- **Curtain reveals** on `.split-media` (clip-path inset) + image scale-settles on
+  portfolio/work cards (GSAP uses `clearProps:'transform'` on complete so the CSS hover
+  zoom takes over — keep that, or hover breaks).
+- **Button label roll**: `.btn` text is wrapped at boot into `.btn-label > .btn-t/.btn-t2`
+  (duplicate slides in on hover). To change a button's text from JS use
+  `setBtnLabel(btn, 'Text')` — do NOT touch childNodes directly (the contact form uses this).
+- Home: pinned **horizontal** "Selected Work" gallery (`.work-track`, disabled below
+  900px) with a progress bar and **scroll-velocity skew** on the track.
+- **Velocity-reactive marquee**: `#trustRow`'s CSS animation is replaced at runtime by a
+  GSAP loop whose speed/skew follow scroll velocity; hovering slows it. Cleanup lives in
+  `buildPage` via the `marqueeTick` ticker handle.
+- Footer: giant wordmark rises character-by-character (`.fc` spans) once on first view,
+  and a **live Johannesburg clock** (`#jhbClock`, Intl API) ticks in the footer bottom.
 - Magnetic buttons (`.magnetic`, desktop + fine-pointer only), animated stat counters
-  (`.count[data-to]`), parallax images (`[data-parallax]`), marquee trust strip.
-- `prefers-reduced-motion` is fully respected (no Lenis, no cycling, static reveals).
-  Keep any new motion behind that check.
+  (`.count[data-to]`), parallax images (`[data-parallax]`).
+- `prefers-reduced-motion` is fully respected (no Lenis, no cycling, no splitting, static
+  reveals; button roll disabled via media query). Keep any new motion behind that check.
 
 ## Brand assets
 
