@@ -121,8 +121,9 @@ amber (`#7A5F00`)** so accent text stays legible on cream. Buttons (`.btn-uv`) a
 
 ## TODO / still placeholder (do NOT present as final/real)
 
-- [ ] **Portfolio**: 9 case studies + images are illustrative. Swap for real projects
-      (real screenshots, real client names, real descriptions).
+- [ ] **Portfolio**: 9 case studies + images are illustrative. Swap for real projects —
+      see **PORTFOLIO-IMAGES.md** for exact image specs, capture guidance, and the
+      drop-in swap prompt. Images go in `assets/portfolio/`.
 - [ ] **Trust marquee** client names are placeholders.
 - [ ] **Testimonials**: two are attributed "Verified Google review" — add real names.
 - [ ] **Stats** (8+ years / 120+ projects / 4.9 rating) are placeholders — confirm real numbers.
