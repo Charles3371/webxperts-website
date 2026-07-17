@@ -40,7 +40,7 @@
   "areaServed": "South Africa",
   "priceRange": "$$",
   "description": "Web design and development studio in Pretoria, South Africa, building fast, conversion-focused websites and brand identities.",
-  "sameAs": ["https://www.instagram.com/webxperts","https://www.linkedin.com/company/webxperts","https://www.facebook.com/webxperts"]
+  "sameAs": ["https://www.instagram.com/webxperts","https://www.linkedin.com/company/webxperts","https://www.facebook.com/webxpertssa/"]
 }
 </script>
 
@@ -77,8 +77,9 @@
   --mono:'Archivo', sans-serif;
 
   --pad: clamp(4rem, 9vw, 9rem);
-  --gutter: clamp(1.125rem, 5vw, 4rem);   /* design side padding: 18px..64px */
-  --maxw: 1360px;                          /* design container width */
+  --gutter: clamp(1.125rem, 5vw, 4rem);   /* side padding: 18px..64px */
+  --shift: clamp(0.25rem, 0.5vw, 0.5rem); /* hero right-push on desktop: 4px..8px */
+  --maxw: 1560px;                          /* content container width */
 
   --ease: cubic-bezier(.22,.61,.36,1);
   --ease-out: cubic-bezier(.16,1,.3,1);
@@ -104,6 +105,8 @@ h1,h2,h3,h4{ margin:0; font-family:var(--display); font-weight:400; line-height:
 p{ margin:0; }
 
 .wrap{ width:100%; max-width:var(--maxw); margin:0 auto; padding:0 var(--gutter); }
+/* Header spans the full viewport width; footer + body content stay capped/centered. */
+.header .wrap{ max-width:none; }
 
 ::selection{ background:var(--brand); color:var(--ink); }
 
@@ -130,6 +133,8 @@ p{ margin:0; }
 .display-m{ font-size:clamp(1.7rem, 3.6vw, 3rem); line-height:1.05; font-weight:400; letter-spacing:.01em; }
 .display-s{ font-size:clamp(1.25rem, 2vw, 1.6rem); line-height:1.1; font-weight:400; letter-spacing:.01em; }
 .lead{ font-size:clamp(1.05rem, 1.45vw, 1.3rem); line-height:1.55; max-width:44ch; font-weight:400; }
+/* Hero sub a touch wider on desktop so it stays on 3 lines, not 4. */
+@media (min-width:1024px){ .hero .lead{ max-width:53ch; } }
 .muted-ink{ color:var(--on-ink-dim); }
 .muted-bone{ color:var(--on-bone-dim); }
 em.uv{ font-family:var(--serif); font-style:italic; font-weight:400; text-transform:none; letter-spacing:0; color:inherit; }
@@ -151,6 +156,12 @@ em.uv{ font-family:var(--serif); font-style:italic; font-weight:400; text-transf
 @media (min-width:900px){
   .sec-head{ grid-template-columns:1.1fr .9fr; align-items:end; gap:2rem 3rem; }
   .sec-head .lead{ justify-self:end; }
+}
+/* sub-heading aligned onto the last column of a 3-col grid below (matches .svc-grid.cols-3) */
+@media (min-width:1080px){
+  .sec-head.sh-grid3{ grid-template-columns:repeat(3,1fr); column-gap:1px; }
+  .sec-head.sh-grid3 .display-m{ grid-column:1 / 3; }
+  .sec-head.sh-grid3 .lead{ grid-column:3; }
 }
 
 /* =====================================================================
@@ -208,7 +219,7 @@ em.uv{ font-family:var(--serif); font-style:italic; font-weight:400; text-transf
    PAGE WIPE
 ===================================================================== */
 .wipe{ position:fixed; inset:0; z-index:9500; background:var(--uv); transform:scaleY(0); transform-origin:bottom; pointer-events:none; }
-.wipe-label{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:var(--ink); font-family:var(--display); font-weight:700; font-size:clamp(2rem,8vw,5rem); opacity:0; letter-spacing:-0.03em; }
+.wipe-label{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:var(--ink); font-family:var(--display); font-weight:700; font-size:clamp(2rem,8vw,5rem); opacity:0; letter-spacing:normal; }
 
 /* =====================================================================
    HEADER
@@ -223,7 +234,7 @@ em.uv{ font-family:var(--serif); font-style:italic; font-weight:400; text-transf
 .brand svg{ width:34px; height:34px; }
 .brand b{ font-family:var(--body); font-weight:600; font-size:1.15rem; letter-spacing:.04em; text-transform:uppercase; }
 
-.nav{ display:flex; align-items:center; gap:2.4rem; }
+.nav{ display:flex; align-items:center; gap:2.4rem; margin-left:auto; margin-right:2.2rem; }
 .nav a{ font-family:var(--mono); font-size:.78rem; letter-spacing:.05em; color:var(--on-ink-dim); position:relative; padding:.4rem 0; transition:color .25s var(--ease); text-transform:uppercase; }
 .nav a:hover, .nav a.active{ color:var(--on-ink); }
 .nav a::after{ content:''; position:absolute; left:0; bottom:-1px; width:0; height:1px; background:var(--uv-soft); transition:width .35s var(--ease); }
@@ -265,6 +276,7 @@ em.uv{ font-family:var(--serif); font-style:italic; font-weight:400; text-transf
 .hero{ position:relative; min-height:100svh; display:flex; align-items:center; overflow:hidden; padding:8rem 0 3rem; }
 .hero-glow{ position:absolute; z-index:0; width:60vw; height:60vw; max-width:760px; max-height:760px; border-radius:50%; background:radial-gradient(circle, rgba(253,208,0,.20), transparent 62%); filter:blur(20px); top:-12%; right:-8%; pointer-events:none; }
 .hero-inner{ position:relative; z-index:2; width:100%; }
+@media (min-width:1280px){ .hero .hero-inner{ padding-left:calc(var(--gutter) + var(--shift)); padding-right:var(--gutter); } }
 .hero h1{ margin:1.6rem 0; }
 .rh-mask{ display:block; overflow:hidden; padding-bottom:.04em; }
 .rh-line{ display:block; transform:translateY(110%); }
@@ -278,7 +290,42 @@ em.uv{ font-family:var(--serif); font-style:italic; font-weight:400; text-transf
 .hero-cta{ display:flex; gap:1rem; flex-wrap:wrap; }
 .hero-scroll{ display:flex; flex-direction:column; align-items:flex-end; gap:.6rem; color:var(--on-ink-dim); }
 .hero-scroll .mono{ color:var(--on-ink-dim); }
-.hero-scroll .bar{ width:1px; height:46px; background:linear-gradient(var(--uv-soft), transparent); }
+/* --- Scroll-cue switcher: data-variant on .hero-scroll picks one --- */
+.hero-scroll .sv{ display:none; }
+.hero-scroll[data-variant="rail"] .sv-rail{ display:block; }
+.hero-scroll[data-variant="chevron"] .sv-chevron{ display:flex; }
+.hero-scroll[data-variant="line"] .sv-line{ display:block; }
+.hero-scroll[data-variant="mouse"] .sv-mouse{ display:block; }
+.hero-scroll[data-variant="mouse"]{ flex-direction:row; align-items:center; gap:.7rem; }
+
+/* 1 — rail: a gold segment glides down a hairline track */
+.sv-rail{ position:relative; width:1px; height:58px; background:var(--line-ink-2); overflow:hidden; }
+.sv-rail .rail-dot{ position:absolute; left:-1px; top:0; width:3px; height:16px; border-radius:2px; background:var(--uv-soft); animation:heroRail 1.9s cubic-bezier(.7,0,.3,1) infinite; }
+@keyframes heroRail{ 0%{ transform:translateY(-18px); opacity:0; } 25%{ opacity:1; } 75%{ opacity:1; } 100%{ transform:translateY(58px); opacity:0; } }
+
+/* 2 — chevron: two down-chevrons pulse in sequence */
+.sv-chevron{ flex-direction:column; align-items:center; gap:2px; }
+.sv-chevron i{ width:11px; height:11px; border-right:1.6px solid var(--uv-soft); border-bottom:1.6px solid var(--uv-soft); transform:rotate(45deg); animation:heroChev 1.5s ease-in-out infinite; }
+.sv-chevron i:last-child{ animation-delay:.18s; }
+@keyframes heroChev{ 0%,100%{ opacity:.22; } 50%{ opacity:1; } }
+
+/* 3 — line: a hairline draws down, then retracts */
+.sv-line{ position:relative; width:1px; height:58px; background:var(--line-ink-2); overflow:hidden; }
+.sv-line .line-fill{ position:absolute; inset:0; background:var(--uv-soft); transform:scaleY(0); transform-origin:top; animation:heroLine 2s ease-in-out infinite; }
+@keyframes heroLine{ 0%{ transform:scaleY(0); transform-origin:top; } 45%{ transform:scaleY(1); transform-origin:top; } 55%{ transform:scaleY(1); transform-origin:bottom; } 100%{ transform:scaleY(0); transform-origin:bottom; } }
+
+/* 4 — mouse: a wheel dot drifts down inside a mouse outline */
+.sv-mouse{ width:22px; height:34px; border:1.5px solid var(--line-ink-2); border-radius:12px; position:relative; }
+.sv-mouse .mouse-dot{ position:absolute; left:50%; top:7px; width:3px; height:7px; border-radius:2px; background:var(--uv-soft); transform:translateX(-50%); animation:heroMouse 1.6s ease-in-out infinite; }
+@keyframes heroMouse{ 0%{ transform:translate(-50%,0); opacity:0; } 25%{ opacity:1; } 75%{ opacity:1; } 100%{ transform:translate(-50%,12px); opacity:0; } }
+
+@media (prefers-reduced-motion: reduce){
+  .hero-scroll .rail-dot, .hero-scroll .line-fill, .hero-scroll .mouse-dot, .hero-scroll .sv-chevron i{ animation:none; }
+  .hero-scroll .rail-dot{ transform:none; top:0; height:26px; opacity:1; }
+  .hero-scroll .line-fill{ transform:scaleY(1); opacity:1; }
+  .hero-scroll .mouse-dot{ transform:translateX(-50%); opacity:1; }
+  .hero-scroll .sv-chevron i{ opacity:1; }
+}
 @media (max-width:680px){ .hero-scroll{ display:none; } }
 
 .page-hero{ min-height:auto; padding:11rem 0 4rem; }
@@ -422,6 +469,11 @@ em.uv{ font-family:var(--serif); font-style:italic; font-weight:400; text-transf
 .faq-a>div{ overflow:hidden; min-height:0; }
 .faq-item.open .faq-a{ grid-template-rows:1fr; }
 .faq-a p{ padding:0 0 1.7rem; color:var(--on-bone-dim); max-width:68ch; line-height:1.65; }
+/* Centered FAQ: kicker, heading and accordion share one centered 880px column
+   (left-aligned text, so they all line up with the accordion's left edge). */
+.faq-center .faq{ margin-inline:auto; }
+.faq-center>.wrap>h2{ max-width:880px; margin-inline:auto; }
+.faq-center>.wrap>.kicker{ display:flex; max-width:880px; margin-inline:auto; }
 
 /* =====================================================================
    PORTFOLIO
@@ -456,14 +508,26 @@ em.uv{ font-family:var(--serif); font-style:italic; font-weight:400; text-transf
 .modal-body .cat{ font-family:var(--mono); font-size:.74rem; color:var(--uv); text-transform:uppercase; letter-spacing:.05em; }
 .modal-body h3{ font-size:clamp(1.7rem,4vw,2.4rem); margin:.7rem 0 1.1rem; }
 .modal-body p{ color:var(--on-bone-dim); line-height:1.7; margin-bottom:1.8rem; }
-.modal-x{ position:absolute; top:1rem; right:1rem; width:42px; height:42px; border-radius:50%; background:var(--ink); color:var(--bone); border:0; cursor:pointer; display:flex; align-items:center; justify-content:center; z-index:2; }
+.modal-x{ position:absolute; top:1rem; right:1rem; width:42px; height:42px; border-radius:50%; background:var(--ink); color:var(--on-ink); border:1px solid var(--line-ink-2); cursor:pointer; display:flex; align-items:center; justify-content:center; z-index:2; transition:background .2s var(--ease), color .2s var(--ease); }
+.modal-x:hover{ background:var(--uv); color:var(--ink); border-color:var(--uv); }
 .modal-x svg{ width:16px; height:16px; }
+.modal-cta{ display:flex; gap:1rem; flex-wrap:wrap; align-items:center; }
+
+/* Back-to-top button */
+.to-top{ position:fixed; right:clamp(1rem,3vw,2rem); bottom:clamp(1rem,3vw,2rem); z-index:900; width:48px; height:48px; border-radius:50%; border:0; background:var(--brand); color:var(--ink); cursor:pointer; display:flex; align-items:center; justify-content:center; opacity:0; visibility:hidden; transform:translateY(12px); transition:opacity .35s var(--ease), transform .35s var(--ease), background .2s var(--ease); box-shadow:0 8px 26px rgba(0,0,0,.4); }
+.to-top.show{ opacity:1; visibility:visible; transform:translateY(0); }
+.to-top:hover{ background:var(--on-ink); }
+.to-top svg{ width:18px; height:18px; }
+@media (prefers-reduced-motion: reduce){ .to-top{ transition:opacity .2s var(--ease), visibility .2s var(--ease); transform:none; } .to-top.show{ transform:none; } }
 
 /* =====================================================================
    CONTACT
 ===================================================================== */
 .contact-grid{ display:grid; grid-template-columns:1fr; gap:3rem; align-items:start; }
 @media (min-width:920px){ .contact-grid{ grid-template-columns:1.15fr .85fr; gap:clamp(3rem,6vw,6rem); } }
+/* Contact hero: copy on the left, contact card on the right */
+.contact-hero-grid{ display:grid; grid-template-columns:1fr; gap:2.4rem; align-items:center; width:100%; }
+@media (min-width:920px){ .contact-hero-grid{ grid-template-columns:1.05fr .95fr; gap:clamp(2.5rem,5vw,5rem); } }
 .field{ margin-bottom:1.6rem; }
 .field label{ display:block; font-family:var(--mono); font-size:.72rem; letter-spacing:.05em; text-transform:uppercase; margin-bottom:.6rem; color:var(--on-bone-dim); }
 .field input, .field textarea{ width:100%; background:none; border:0; border-bottom:1.5px solid var(--line-bone-2); padding:.75rem .1rem; font-family:var(--body); font-size:1.05rem; color:var(--on-bone); transition:border-color .25s var(--ease); }
@@ -483,6 +547,9 @@ em.uv{ font-family:var(--serif); font-style:italic; font-weight:400; text-transf
 .info-row svg{ width:18px; height:18px; stroke:var(--uv-soft); flex-shrink:0; margin-top:.15rem; }
 .info-row .l{ font-family:var(--mono); font-size:.7rem; letter-spacing:.05em; text-transform:uppercase; color:var(--on-ink-dim); margin-bottom:.3rem; }
 .info-row .v{ font-size:1rem; }
+.info-row .v a{ color:inherit; transition:color .2s var(--ease); }
+.info-row .v a:hover{ color:var(--uv-soft); }
+.note a{ color:inherit; text-decoration:underline; text-underline-offset:2px; }
 .info .socials{ margin-top:1.8rem; }
 
 /* =====================================================================
@@ -502,6 +569,37 @@ em.uv{ font-family:var(--serif); font-style:italic; font-weight:400; text-transf
 .cta-gold em.uv{ color:var(--ink); }
 .cta-gold .btn-uv{ background:var(--ink); color:var(--brand); }
 .cta-gold .btn-uv:hover{ background:var(--ink); color:var(--on-ink); }
+
+/* =====================================================================
+   PACKAGES / PRICING
+===================================================================== */
+.price-grid{ display:grid; grid-template-columns:1fr; gap:1.4rem; }
+@media (min-width:720px){ .price-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:1120px){ .price-grid{ grid-template-columns:repeat(4,1fr); } }
+.price-card{ position:relative; display:flex; flex-direction:column; background:var(--ink-2); border:1px solid var(--line-ink); padding:2.1rem 1.7rem; }
+.price-card--featured{ border-color:var(--uv); }
+.pc-badge{ position:absolute; top:-1px; right:-1px; background:var(--uv); color:var(--ink); font-family:var(--mono); font-size:.62rem; font-weight:500; letter-spacing:.1em; text-transform:uppercase; padding:.35rem .6rem; }
+.pc-name{ font-family:var(--display); font-weight:400; font-size:1.5rem; text-transform:uppercase; letter-spacing:.02em; line-height:1; }
+.pc-tag{ font-family:var(--mono); font-size:.7rem; color:var(--on-ink-dim); text-transform:uppercase; letter-spacing:.06em; margin-top:.55rem; }
+.pc-price{ display:flex; align-items:baseline; gap:.35rem; margin:1.3rem 0 .1rem; min-height:2.6rem; }
+.price-amt{ font-family:var(--display); font-weight:400; font-size:2.4rem; color:var(--uv); letter-spacing:.01em; line-height:1; }
+.pc-per{ font-family:var(--mono); font-size:.78rem; color:var(--on-ink-dim); }
+.pc-desc{ color:var(--on-ink-dim); font-size:.88rem; line-height:1.6; margin:.7rem 0 1.3rem; }
+.pc-toggle{ display:flex; align-items:center; gap:.6rem; margin:0 0 1.2rem; font-family:var(--mono); font-size:.68rem; text-transform:uppercase; letter-spacing:.05em; color:var(--on-ink); }
+.switch{ position:relative; display:inline-block; width:40px; height:22px; flex:none; }
+.switch input{ opacity:0; width:0; height:0; }
+.switch .slider{ position:absolute; inset:0; background:var(--line-ink-2); border-radius:999px; transition:background .25s var(--ease); cursor:pointer; }
+.switch .slider::before{ content:''; position:absolute; width:16px; height:16px; left:3px; top:3px; background:var(--on-ink); border-radius:50%; transition:transform .25s var(--ease); }
+.switch input:checked + .slider{ background:var(--uv); }
+.switch input:checked + .slider::before{ transform:translateX(18px); background:var(--ink); }
+.switch input:focus-visible + .slider{ outline:2px solid var(--uv); outline-offset:2px; }
+.pc-features{ list-style:none; display:flex; flex-direction:column; gap:.7rem; margin:0 0 1.7rem; flex:1; }
+.pc-features li{ position:relative; padding-left:1.5rem; font-size:.88rem; line-height:1.45; }
+.pc-features li::before{ content:'✓'; position:absolute; left:0; top:0; color:var(--uv); font-size:.8rem; }
+.pc-features li.no{ color:var(--on-ink-dim); }
+.pc-features li.no::before{ content:'✕'; color:var(--on-ink-dim); }
+.price-card .btn{ width:100%; justify-content:center; }
+.price-note{ margin-top:1.8rem; font-family:var(--mono); font-size:.72rem; letter-spacing:.04em; color:var(--on-ink-dim); text-transform:uppercase; }
 
 /* =====================================================================
    FOOTER
@@ -574,7 +672,7 @@ em.uv{ font-family:var(--serif); font-style:italic; font-weight:400; text-transf
     <div class="socials">
       <a href="https://www.instagram.com/webxperts" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="#ECE6D9" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
       <a href="https://wa.me/27659618206" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="#ECE6D9" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3z"/><path d="M8.5 8.2c.2-.5.4-.5.6-.5h.5c.2 0 .4 0 .6.5l.7 1.6c.1.2 0 .4-.1.6l-.4.5c-.1.2-.2.3 0 .6a6 6 0 0 0 2.6 2.3c.3.1.4 0 .6-.1l.5-.6c.2-.2.3-.2.6-.1l1.5.8c.3.1.4.2.4.4 0 .4-.2 1.1-.6 1.3-.4.3-1.2.6-2 .4a8 8 0 0 1-5.3-4.6c-.3-.8-.1-1.6.1-2z"/></svg></a>
-      <a href="https://www.facebook.com/webxperts" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="#ECE6D9" stroke-width="1.6"><path d="M15 4h-2a4 4 0 0 0-4 4v2H7v3h2v7h3v-7h2.5l.5-3H12V8a1 1 0 0 1 1-1h2z"/></svg></a>
+      <a href="https://www.facebook.com/webxpertssa/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="#ECE6D9" stroke-width="1.6"><path d="M15 4h-2a4 4 0 0 0-4 4v2H7v3h2v7h3v-7h2.5l.5-3H12V8a1 1 0 0 1 1-1h2z"/></svg></a>
     </div>
   </div>
 </nav>
@@ -600,7 +698,7 @@ em.uv{ font-family:var(--serif); font-style:italic; font-weight:400; text-transf
             <a href="#portfolio" class="btn btn-line magnetic" data-link>See Selected Work</a>
           </div>
         </div>
-        <div class="hero-scroll" aria-hidden="true"><span class="mono">Scroll</span><span class="bar"></span></div>
+        <div class="hero-scroll" data-variant="mouse" aria-hidden="true"><span class="mono">Scroll</span><span class="sv sv-rail"><span class="rail-dot"></span></span><span class="sv sv-chevron"><i></i><i></i></span><span class="sv sv-line"><span class="line-fill"></span></span><span class="sv sv-mouse"><span class="mouse-dot"></span></span></div>
       </div>
     </div>
   </section>
@@ -609,8 +707,8 @@ em.uv{ font-family:var(--serif); font-style:italic; font-weight:400; text-transf
     <div class="wrap"><p class="trust-label mono">Trusted by ambitious South African brands</p></div>
     <div class="marquee">
       <div class="marquee-row" id="trustRow">
-        <span class="marquee-item">Stonebridge Logistics</span><span class="marquee-item">Aurelia Skincare</span><span class="marquee-item">Horizon Realty</span><span class="marquee-item">Kalahari &amp; Co</span><span class="marquee-item">Pioneer Fintech</span><span class="marquee-item">Savanna Eats</span><span class="marquee-item">Bluerock Capital</span><span class="marquee-item">Pulse Fitness</span>
-        <span class="marquee-item">Stonebridge Logistics</span><span class="marquee-item">Aurelia Skincare</span><span class="marquee-item">Horizon Realty</span><span class="marquee-item">Kalahari &amp; Co</span><span class="marquee-item">Pioneer Fintech</span><span class="marquee-item">Savanna Eats</span><span class="marquee-item">Bluerock Capital</span><span class="marquee-item">Pulse Fitness</span>
+        <span class="marquee-item">Behind The Cake</span><span class="marquee-item">Eully's Cakery</span><span class="marquee-item">MLB Creatives</span><span class="marquee-item">Orange Service Group</span><span class="marquee-item">Classic Lo</span><span class="marquee-item">Task Africa</span><span class="marquee-item">Masters Trailers</span><span class="marquee-item">Forty Infrastructure Group</span><span class="marquee-item">Azancon Engineering</span><span class="marquee-item">Privo</span><span class="marquee-item">Inspect@us</span><span class="marquee-item">AVS Precision</span><span class="marquee-item">GSSA Ground Water Division</span><span class="marquee-item">Onalerena Aluminium</span><span class="marquee-item">Privo Technologies</span>
+        <span class="marquee-item">Behind The Cake</span><span class="marquee-item">Eully's Cakery</span><span class="marquee-item">MLB Creatives</span><span class="marquee-item">Orange Service Group</span><span class="marquee-item">Classic Lo</span><span class="marquee-item">Task Africa</span><span class="marquee-item">Masters Trailers</span><span class="marquee-item">Forty Infrastructure Group</span><span class="marquee-item">Azancon Engineering</span><span class="marquee-item">Privo</span><span class="marquee-item">Inspect@us</span><span class="marquee-item">AVS Precision</span><span class="marquee-item">GSSA Ground Water Division</span><span class="marquee-item">Onalerena Aluminium</span><span class="marquee-item">Privo Technologies</span>
       </div>
     </div>
   </section>
@@ -618,8 +716,8 @@ em.uv{ font-family:var(--serif); font-style:italic; font-weight:400; text-transf
   <section class="section section--bone">
     <div class="wrap">
       <div class="sec-head">
-        <h2 class="display-m anim">Three reasons clients<br>pick us — and stay.</h2>
-        <p class="lead muted-bone anim">Every site we ship is judged on one thing: does it grow the business. Here's how we make sure it does.</p>
+        <h2 class="display-m anim" style="max-width:22ch;">Three reasons clients<br>pick us — and stay.</h2>
+        <p class="lead muted-bone anim" style="justify-self:start;">Every site we ship is judged on one thing: does it grow the business. Here's how we make sure it does.</p>
       </div>
       <div class="benefits">
         <article class="benefit anim"><div class="b-num">01</div><h3>Built to convert</h3><p>Every layout, headline and button is designed around one goal — turning visitors into booked calls and paying clients, not just looking pretty.</p></article>
@@ -638,30 +736,30 @@ em.uv{ font-family:var(--serif); font-style:italic; font-weight:400; text-transf
     </div>
     <div class="wrap">
       <div class="work-track" id="workTrack">
-        <article class="work-card open-modal" data-title="Stonebridge Logistics" data-cat="Web Development" data-img="https://images.unsplash.com/photo-1569748130764-3fed0c102c59?auto=format&fit=crop&w=1200&q=80" data-desc="We rebuilt Stonebridge's platform from the ground up — a hand-coded dashboard where customers request quotes and track shipments in real time. Load times dropped from 6.2s to under 1.4s, and online quote requests rose 64% in the first quarter.">
-          <div class="work-shot"><span class="num">01</span><img src="https://images.unsplash.com/photo-1569748130764-3fed0c102c59?auto=format&fit=crop&w=900&q=80" alt="Quote calculator and live tracking dashboard built for Stonebridge Logistics" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
-          <div class="work-meta"><h3>Stonebridge Logistics</h3><span class="cat">Web Dev</span></div>
-          <p>Custom quote calculator and live tracking dashboard for a growing logistics provider.</p>
+        <article class="work-card open-modal" data-title="Behind The Cake" data-cat="Web Development" data-services="Web Development" data-url="https://www.behindthecake.co.za" data-img="https://images.unsplash.com/photo-1569748130764-3fed0c102c59?auto=format&fit=crop&w=1200&q=80" data-desc="Custom quote calculator for independent bakers.">
+          <div class="work-shot"><span class="num">01</span><img src="https://images.unsplash.com/photo-1569748130764-3fed0c102c59?auto=format&fit=crop&w=900&q=80" alt="Custom quote calculator built for independent bakers — Behind The Cake" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+          <div class="work-meta"><h3>Behind The Cake</h3><span class="cat">Web Dev</span></div>
+          <p>Custom quote calculator for independent bakers.</p>
         </article>
-        <article class="work-card open-modal" data-title="Aurelia Skincare" data-cat="Web Design" data-img="https://images.unsplash.com/photo-1575248208233-c777219911e2?auto=format&fit=crop&w=1200&q=80" data-desc="Aurelia needed a site as considered as their formulations. We designed an editorial layout with large product photography, ingredient storytelling and a streamlined checkout — average order value rose 38% within two months.">
-          <div class="work-shot"><span class="num">02</span><img src="https://images.unsplash.com/photo-1575248208233-c777219911e2?auto=format&fit=crop&w=900&q=80" alt="Editorial ecommerce website design for Aurelia Skincare" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
-          <div class="work-meta"><h3>Aurelia Skincare</h3><span class="cat">Web Design</span></div>
-          <p>Editorial ecommerce experience for a premium South African skincare brand.</p>
+        <article class="work-card open-modal" data-title="Eully's Cakery" data-cat="Web Design" data-services="Web Design | Shopify" data-url="https://www.eullyscakery.com" data-img="assets/portfolio/eullys-cakery.jpeg" data-desc="Ecommerce experience built on Shopify for baking supplies.">
+          <div class="work-shot"><span class="num">02</span><img src="assets/portfolio/eullys-cakery.jpeg" alt="Shopify ecommerce store for baking supplies — Eully's Cakery" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+          <div class="work-meta"><h3>Eully's Cakery</h3><span class="cat">Web Design</span></div>
+          <p>Ecommerce experience built on Shopify for baking supplies.</p>
         </article>
-        <article class="work-card open-modal" data-title="Horizon Realty" data-cat="Web Development" data-img="https://images.unsplash.com/photo-1758846946191-dfe1cd91779b?auto=format&fit=crop&w=1200&q=80" data-desc="Horizon's old site couldn't handle their growing catalogue. We built a custom property platform with map-based search, instant filtering and a CMS their team runs without a developer — and it now ranks on page one for their core local terms.">
-          <div class="work-shot"><span class="num">03</span><img src="https://images.unsplash.com/photo-1758846946191-dfe1cd91779b?auto=format&fit=crop&w=900&q=80" alt="Property listing platform with map search built for Horizon Realty" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
-          <div class="work-meta"><h3>Horizon Realty</h3><span class="cat">Web Dev</span></div>
-          <p>Property listing platform with map-based search and saved searches.</p>
+        <article class="work-card open-modal" data-title="MLB Creatives" data-cat="Web Development" data-services="Web Development" data-url="https://www.mlbcreatives.co.za" data-img="assets/portfolio/mlb-creatives.png" data-desc="A modern CMS based website to showcase an architectural studio portfolio.">
+          <div class="work-shot"><span class="num">03</span><img src="assets/portfolio/mlb-creatives.png" alt="CMS-based portfolio website for architectural studio MLB Creatives" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+          <div class="work-meta"><h3>MLB Creatives</h3><span class="cat">Web Dev</span></div>
+          <p>A modern CMS based website to showcase an architectural studio portfolio.</p>
         </article>
-        <article class="work-card open-modal" data-title="Kalahari &amp; Co" data-cat="Branding" data-img="https://images.unsplash.com/photo-1753837787691-84a06d715d24?auto=format&fit=crop&w=1200&q=80" data-desc="Kalahari needed a brand that could hold its own next to international roasters. We developed a full identity — wordmark, palette, packaging and a one-page site — built around the warmth of single-origin storytelling.">
-          <div class="work-shot"><span class="num">04</span><img src="https://images.unsplash.com/photo-1753837787691-84a06d715d24?auto=format&fit=crop&w=900&q=80" alt="Brand identity and packaging for Kalahari and Co coffee roastery" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
-          <div class="work-meta"><h3>Kalahari &amp; Co</h3><span class="cat">Branding</span></div>
-          <p>Full identity system for a boutique coffee roastery, from logo to packaging.</p>
+        <article class="work-card open-modal" data-title="Orange Service Group" data-cat="Branding" data-services="Web Design | Branding" data-url="https://www.orangegroup.co.za" data-img="assets/portfolio/orange-service-group.jpg" data-desc="Full identity system for the companies in the group, from logo to web design.">
+          <div class="work-shot"><span class="num">04</span><img src="assets/portfolio/orange-service-group.jpg" alt="Full identity system and web design for Orange Service Group" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+          <div class="work-meta"><h3>Orange Service Group</h3><span class="cat">Branding</span></div>
+          <p>Full identity system for the companies in the group, from logo to web design.</p>
         </article>
-        <article class="work-card open-modal" data-title="Pulse Fitness Studio" data-cat="Branding" data-img="https://images.unsplash.com/photo-1758957646695-ec8bce3df462?auto=format&fit=crop&w=1200&q=80" data-desc="Pulse wanted an identity as high-energy as their classes. We built a bold visual system paired with a booking-first website that lets members reserve in two taps — class bookings rose 41% in the first month.">
-          <div class="work-shot"><span class="num">05</span><img src="https://images.unsplash.com/photo-1758957646695-ec8bce3df462?auto=format&fit=crop&w=900&q=80" alt="Brand identity and booking site for Pulse Fitness Studio" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
-          <div class="work-meta"><h3>Pulse Fitness Studio</h3><span class="cat">Branding</span></div>
-          <p>Bold identity and class-booking website for a boutique fitness studio.</p>
+        <article class="work-card open-modal" data-title="Classic Lo" data-cat="Branding" data-services="Branding | Web Design | Shopify" data-url="https://www.classiclo.co.za" data-img="assets/portfolio/classic-lo.png" data-desc="Full identity system, from logo to a Shopify ecommerce store selling baby products.">
+          <div class="work-shot"><span class="num">05</span><img src="assets/portfolio/classic-lo.png" alt="Brand identity and Shopify store for baby brand Classic Lo" loading="lazy"><span class="go"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span></div>
+          <div class="work-meta"><h3>Classic Lo</h3><span class="cat">Branding</span></div>
+          <p>Full identity system, from logo to a Shopify store selling baby products.</p>
         </article>
       </div>
       <div class="work-progress"><i id="workProgress"></i></div>
@@ -670,13 +768,16 @@ em.uv{ font-family:var(--serif); font-style:italic; font-weight:400; text-transf
 
   <section class="section section--bone">
     <div class="wrap">
-      <div class="sec-head"><h2 class="display-m anim">What we do.</h2><p class="lead muted-bone anim">Three disciplines, one studio — so design, build and brand stay in sync instead of fighting each other.</p></div>
+      <div class="sec-head sh-grid3"><h2 class="display-m anim">What we do.</h2><p class="lead muted-bone anim" style="justify-self:start;">Three disciplines, one studio — so design, build and brand stay in sync instead of fighting each other.</p></div>
       <div class="svc-grid cols-3">
         <a href="#services" class="svc anim" data-link><span class="svc-num">01 / Web Design</span><h3>Web Design</h3><p>Conversion-led interface design built around your real content and your customers' journey.</p></a>
         <a href="#services" class="svc anim" data-link><span class="svc-num">02 / Web Development</span><h3>Web Development</h3><p>Fast, secure, hand-built sites — from marketing pages to custom web applications.</p></a>
         <a href="#services" class="svc anim" data-link><span class="svc-num">03 / Brand Identity</span><h3>Brand Identity</h3><p>Logos, colour systems and visual language that make your business instantly recognisable.</p></a>
       </div>
     </div>
+  </section>
+
+  <section class="section section--ink rule-top--ink packages" data-packages-mirror>
   </section>
 
   <section class="section section--bone rule-top--bone">
@@ -695,7 +796,7 @@ em.uv{ font-family:var(--serif); font-style:italic; font-weight:400; text-transf
       <div class="split">
         <div>
           <p class="kicker anim">About the studio</p>
-          <h2 class="display-l anim" style="margin:1.2rem 0;">A small, senior team that's sat on <em class="uv">both sides</em> of the table.</h2>
+          <h2 class="display-l anim" style="margin:1.2rem 0;">A small, <em class="uv">senior</em> team.</h2>
           <p class="lead muted-bone anim">Designers and developers who've worked agency-side and in-house. We build websites the way we'd want to receive them — fast, honest about timelines, engineered to do a job.</p>
           <div class="stats">
             <div class="stat anim"><div class="n"><em><span class="count" data-to="8">0</span>+</em></div><div class="l">Years building for SA business</div></div>
@@ -709,10 +810,10 @@ em.uv{ font-family:var(--serif); font-style:italic; font-weight:400; text-transf
     </div>
   </section>
 
-  <section class="section section--ink rule-top--ink">
+  <section class="section section--ink rule-top--ink faq-center">
     <div class="wrap">
       <p class="kicker anim">FAQ</p>
-      <h2 class="display-m anim" style="margin:1.2rem 0 2.4rem;">Questions we get <em class="uv">asked a lot.</em></h2>
+      <h2 class="display-m anim" style="margin:1.2rem auto 2.4rem;">Questions we get <em class="uv">asked a lot.</em></h2>
       <div class="faq">
         <div class="faq-item"><button class="faq-q">How much does a new website cost?<span class="faq-ic" aria-hidden="true"></span></button><div class="faq-a"><div><p>Every project is scoped individually based on pages, features and complexity. After a free consultation you'll get a proposal with a clear, fixed quote before any work begins. We're flexible on payment too — upfront, monthly instalments for larger projects, or pay-as-you-go for smaller ones.</p></div></div></div>
         <div class="faq-item"><button class="faq-q">How long does a project take?<span class="faq-ic" aria-hidden="true"></span></button><div class="faq-a"><div><p>It depends on scope, but most marketing websites take a few weeks from kickoff to launch. We'll give you a realistic timeline before we start and keep you updated throughout.</p></div></div></div>
@@ -730,7 +831,7 @@ em.uv{ font-family:var(--serif); font-style:italic; font-weight:400; text-transf
       <h2 class="display-l anim">Something your customers <em class="uv">actually trust.</em></h2>
       <p class="lead anim">A 20-minute conversation about your goals — no pressure, no jargon, just a clear plan for your next website.</p>
       <div class="hero-cta anim"><a href="#contact" class="btn btn-uv magnetic" data-link><span class="dot"></span>Book a Call</a></div>
-      <p class="note mono anim">hello@webxperts.co.za · +27 65 961 8206 · Pretoria, South Africa</p>
+      <p class="note mono anim"><a href="mailto:hello@webxperts.co.za">hello@webxperts.co.za</a> · <a href="tel:+27659618206">+27 65 961 8206</a> · Pretoria, South Africa</p>
     </div>
   </section>
 
@@ -788,7 +889,7 @@ em.uv{ font-family:var(--serif); font-style:italic; font-weight:400; text-transf
     </div>
   </section>
 
-  <section class="section section--ink cta-big">
+  <section class="section cta-big cta-gold">
     <div class="wrap">
       <p class="kicker anim" style="justify-content:center;">Get in touch</p>
       <h2 class="display-l anim">Curious if we're the <em class="uv">right fit?</em></h2>
@@ -826,6 +927,87 @@ em.uv{ font-family:var(--serif); font-style:italic; font-weight:400; text-transf
     </div>
   </section>
 
+  <section class="section section--ink rule-top--ink packages" data-packages-src>
+    <div class="wrap">
+      <div class="sec-head"><h2 class="display-m anim">Simple, transparent <em class="uv">pricing.</em></h2><p class="lead muted-ink anim">Fixed, honest prices — no vague quotes or surprise line items. Pick a starting point; we'll tailor the details on a free call.</p></div>
+      <div class="price-grid">
+
+        <article class="price-card price-card--featured anim">
+          <span class="pc-badge">Most popular</span>
+          <span class="pc-name">Starter</span>
+          <p class="pc-tag">Monthly website plan</p>
+          <div class="pc-price"><span class="price-amt">R549</span><span class="pc-per">/ month</span></div>
+          <p class="pc-desc">A basic but professional website on an affordable monthly plan — you own it outright after 24 months.</p>
+          <ul class="pc-features">
+            <li>Custom 5-page website — no templates</li>
+            <li>Mobile-responsive design</li>
+            <li>On-page SEO included</li>
+            <li>Basic monthly maintenance &amp; updates</li>
+            <li>Secure hosting &amp; SSL certificate</li>
+            <li>You own the website after 24 months</li>
+            <li class="no">Brand identity design not included</li>
+          </ul>
+          <a href="#contact" class="btn btn-uv magnetic" data-link>Get Started</a>
+        </article>
+
+        <article class="price-card anim">
+          <span class="pc-name">Once-off</span>
+          <p class="pc-tag">Pay once, own it outright</p>
+          <div class="pc-price"><span class="price-amt">R7 500</span><span class="pc-per">once-off</span></div>
+          <div class="pc-toggle">
+            <label class="switch"><input type="checkbox" class="pkg-toggle" aria-label="Switch to a one-page marketing website"><span class="slider"></span></label>
+            <span class="pkg-toggle-label">5-page website</span>
+          </div>
+          <p class="pc-desc">A professionally built website, paid once and yours to keep. Flip the switch for a single-page marketing site.</p>
+          <ul class="pc-features">
+            <li data-feat-pages>Custom 5-page website — no templates</li>
+            <li>Mobile-responsive design</li>
+            <li>On-page SEO included</li>
+            <li>Contact form &amp; map integration</li>
+            <li>Optional maintenance — R499 / month</li>
+            <li class="no">Brand identity design not included</li>
+          </ul>
+          <a href="#contact" class="btn btn-line magnetic" data-link>Get Started</a>
+        </article>
+
+        <article class="price-card anim">
+          <span class="pc-name">Ecommerce</span>
+          <p class="pc-tag">WooCommerce or Shopify</p>
+          <div class="pc-price"><span class="price-amt">R12 500</span><span class="pc-per">from</span></div>
+          <p class="pc-desc">A complete online store to sell your products, built on WooCommerce or Shopify.</p>
+          <ul class="pc-features">
+            <li>Online store on WooCommerce or Shopify</li>
+            <li>Up to 30 products loaded</li>
+            <li>Product, category, cart &amp; checkout pages</li>
+            <li>Secure local payment gateway (PayFast / Yoco / Stripe)</li>
+            <li>Mobile-responsive design</li>
+            <li>On-page SEO included</li>
+            <li>Store-management training</li>
+            <li>Optional maintenance — R499 / month</li>
+          </ul>
+          <a href="#contact" class="btn btn-line magnetic" data-link>Get Started</a>
+        </article>
+
+        <article class="price-card anim">
+          <span class="pc-name">Custom</span>
+          <p class="pc-tag">Bespoke web development</p>
+          <div class="pc-price"><span class="price-amt">Let's talk</span></div>
+          <p class="pc-desc">Web apps, portals and custom functionality scoped around exactly what your business needs.</p>
+          <ul class="pc-features">
+            <li>Custom web applications &amp; portals</li>
+            <li>Third-party &amp; API integrations</li>
+            <li>Bespoke features and functionality</li>
+            <li>Scalable, hand-coded architecture</li>
+            <li>Ongoing support &amp; maintenance</li>
+          </ul>
+          <a href="#contact" class="btn btn-line magnetic" data-link>Book a Call</a>
+        </article>
+
+      </div>
+      <p class="price-note">Prices in ZAR and exclude VAT. Hosting &amp; maintenance billed monthly where applicable.</p>
+    </div>
+  </section>
+
   <section class="section section--ink rule-top--ink">
     <div class="wrap">
       <div class="sec-head"><h2 class="display-m anim">A clear, five-step process — every time.</h2><p class="lead muted-ink anim">No black boxes. You'll know the scope, timeline and budget before any work begins — and exactly what's happening at each stage.</p></div>
@@ -839,10 +1021,10 @@ em.uv{ font-family:var(--serif); font-style:italic; font-weight:400; text-transf
     </div>
   </section>
 
-  <section class="section section--bone">
+  <section class="section section--bone faq-center">
     <div class="wrap">
       <p class="kicker anim">FAQ</p>
-      <h2 class="display-m anim" style="margin:1.2rem 0 2.4rem;">Questions we get asked a lot.</h2>
+      <h2 class="display-m anim" style="margin:1.2rem auto 2.4rem;">Questions we get asked a lot.</h2>
       <div class="faq" id="faq">
         <div class="faq-item"><button class="faq-q">How much does a new website cost?<span class="faq-ic" aria-hidden="true"></span></button><div class="faq-a"><div><p>Every project is scoped individually based on pages, features and complexity. After a free consultation you'll get a proposal with a clear, fixed quote before any work begins. We're flexible on payment too — upfront, monthly instalments for larger projects, or pay-as-you-go for smaller ones.</p></div></div></div>
         <div class="faq-item"><button class="faq-q">How long does a project take?<span class="faq-ic" aria-hidden="true"></span></button><div class="faq-a"><div><p>It depends on scope, but most marketing websites take a few weeks from kickoff to launch. We'll give you a realistic timeline before we start and keep you updated throughout.</p></div></div></div>
@@ -854,7 +1036,7 @@ em.uv{ font-family:var(--serif); font-style:italic; font-weight:400; text-transf
     </div>
   </section>
 
-  <section class="section section--ink cta-big">
+  <section class="section cta-big cta-gold">
     <div class="wrap">
       <p class="kicker anim" style="justify-content:center;">Where to start</p>
       <h2 class="display-l anim">Not sure which service <em class="uv">you need?</em></h2>
@@ -887,56 +1069,36 @@ em.uv{ font-family:var(--serif); font-style:italic; font-weight:400; text-transf
         <button class="filter" data-filter="branding">Branding</button>
       </div>
       <div class="pf-grid" id="pfGrid">
-        <article class="pf open-modal anim" data-cat-key="web-development" data-title="Stonebridge Logistics" data-cat="Web Development" data-img="https://images.unsplash.com/photo-1569748130764-3fed0c102c59?auto=format&fit=crop&w=1200&q=80" data-desc="We rebuilt Stonebridge's platform from the ground up — a hand-coded dashboard where customers request quotes and track shipments in real time. Load times dropped from 6.2s to under 1.4s, and online quote requests rose 64% in the first quarter.">
-          <div class="pf-shot"><img src="https://images.unsplash.com/photo-1569748130764-3fed0c102c59?auto=format&fit=crop&w=900&q=80" alt="Quote calculator and tracking dashboard for Stonebridge Logistics" loading="lazy"><div class="ov"><span>View case study →</span></div></div>
-          <div class="pf-meta"><h3>Stonebridge Logistics</h3><span class="cat">Web Dev</span></div>
-          <p>Custom quote calculator and live tracking dashboard.</p>
+        <article class="pf open-modal anim" data-cat-key="web-development" data-title="Behind The Cake" data-cat="Web Development" data-services="Web Development" data-url="https://www.behindthecake.co.za" data-img="https://images.unsplash.com/photo-1569748130764-3fed0c102c59?auto=format&fit=crop&w=1200&q=80" data-desc="Custom quote calculator for independent bakers.">
+          <div class="pf-shot"><img src="https://images.unsplash.com/photo-1569748130764-3fed0c102c59?auto=format&fit=crop&w=900&q=80" alt="Custom quote calculator built for independent bakers — Behind The Cake" loading="lazy"><div class="ov"><span>View case study →</span></div></div>
+          <div class="pf-meta"><h3>Behind The Cake</h3><span class="cat">Web Dev</span></div>
+          <p>Custom quote calculator for independent bakers.</p>
         </article>
-        <article class="pf open-modal anim" data-cat-key="web-design" data-title="Aurelia Skincare" data-cat="Web Design" data-img="https://images.unsplash.com/photo-1575248208233-c777219911e2?auto=format&fit=crop&w=1200&q=80" data-desc="Aurelia needed a site as considered as their formulations. We designed an editorial layout with large product photography, ingredient storytelling and a streamlined checkout — average order value rose 38% within two months.">
-          <div class="pf-shot"><img src="https://images.unsplash.com/photo-1575248208233-c777219911e2?auto=format&fit=crop&w=900&q=80" alt="Editorial ecommerce website design for Aurelia Skincare" loading="lazy"><div class="ov"><span>View case study →</span></div></div>
-          <div class="pf-meta"><h3>Aurelia Skincare</h3><span class="cat">Web Design</span></div>
-          <p>Editorial ecommerce for a premium skincare brand.</p>
+        <article class="pf open-modal anim" data-cat-key="web-design" data-title="Eully's Cakery" data-cat="Web Design" data-services="Web Design | Shopify" data-url="https://www.eullyscakery.com" data-img="assets/portfolio/eullys-cakery.jpeg" data-desc="Ecommerce experience built on Shopify for baking supplies.">
+          <div class="pf-shot"><img src="assets/portfolio/eullys-cakery.jpeg" alt="Shopify ecommerce store for baking supplies — Eully's Cakery" loading="lazy"><div class="ov"><span>View case study →</span></div></div>
+          <div class="pf-meta"><h3>Eully's Cakery</h3><span class="cat">Web Design</span></div>
+          <p>Ecommerce experience built on Shopify for baking supplies.</p>
         </article>
-        <article class="pf open-modal anim" data-cat-key="web-development" data-title="Horizon Realty" data-cat="Web Development" data-img="https://images.unsplash.com/photo-1758846946191-dfe1cd91779b?auto=format&fit=crop&w=1200&q=80" data-desc="Horizon's old site couldn't handle their growing catalogue. We built a custom property platform with map-based search, instant filtering and a CMS their team runs without a developer — and it now ranks on page one for their core local terms.">
-          <div class="pf-shot"><img src="https://images.unsplash.com/photo-1758846946191-dfe1cd91779b?auto=format&fit=crop&w=900&q=80" alt="Property listing platform with map search for Horizon Realty" loading="lazy"><div class="ov"><span>View case study →</span></div></div>
-          <div class="pf-meta"><h3>Horizon Realty</h3><span class="cat">Web Dev</span></div>
-          <p>Property platform with map-based search.</p>
+        <article class="pf open-modal anim" data-cat-key="web-development" data-title="MLB Creatives" data-cat="Web Development" data-services="Web Development" data-url="https://www.mlbcreatives.co.za" data-img="assets/portfolio/mlb-creatives.png" data-desc="A modern CMS based website to showcase an architectural studio portfolio.">
+          <div class="pf-shot"><img src="assets/portfolio/mlb-creatives.png" alt="CMS-based portfolio website for architectural studio MLB Creatives" loading="lazy"><div class="ov"><span>View case study →</span></div></div>
+          <div class="pf-meta"><h3>MLB Creatives</h3><span class="cat">Web Dev</span></div>
+          <p>A modern CMS based website to showcase an architectural studio portfolio.</p>
         </article>
-        <article class="pf open-modal anim" data-cat-key="branding" data-title="Kalahari &amp; Co" data-cat="Branding" data-img="https://images.unsplash.com/photo-1753837787691-84a06d715d24?auto=format&fit=crop&w=1200&q=80" data-desc="Kalahari needed a brand that could hold its own next to international roasters. We developed a full identity — wordmark, palette, packaging and a one-page site — built around the warmth of single-origin storytelling.">
-          <div class="pf-shot"><img src="https://images.unsplash.com/photo-1753837787691-84a06d715d24?auto=format&fit=crop&w=900&q=80" alt="Brand identity and packaging for Kalahari and Co coffee roastery" loading="lazy"><div class="ov"><span>View case study →</span></div></div>
-          <div class="pf-meta"><h3>Kalahari &amp; Co</h3><span class="cat">Branding</span></div>
-          <p>Full identity for a boutique coffee roastery.</p>
+        <article class="pf open-modal anim" data-cat-key="branding" data-title="Orange Service Group" data-cat="Branding" data-services="Web Design | Branding" data-url="https://www.orangegroup.co.za" data-img="assets/portfolio/orange-service-group.jpg" data-desc="Full identity system for the companies in the group, from logo to web design.">
+          <div class="pf-shot"><img src="assets/portfolio/orange-service-group.jpg" alt="Full identity system and web design for Orange Service Group" loading="lazy"><div class="ov"><span>View case study →</span></div></div>
+          <div class="pf-meta"><h3>Orange Service Group</h3><span class="cat">Branding</span></div>
+          <p>Full identity system for the companies in the group, from logo to web design.</p>
         </article>
-        <article class="pf open-modal anim" data-cat-key="web-design" data-title="Pioneer Fintech" data-cat="Web Design" data-img="https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?auto=format&fit=crop&w=1200&q=80" data-desc="Ahead of a funding round, Pioneer needed a landing site that built credibility fast. We designed a clean, confident layout with clear product explainers and social proof, helping the team book significantly more investor and pilot-customer calls.">
-          <div class="pf-shot"><img src="https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?auto=format&fit=crop&w=900&q=80" alt="Conversion-focused landing site for Pioneer Fintech" loading="lazy"><div class="ov"><span>View case study →</span></div></div>
-          <div class="pf-meta"><h3>Pioneer Fintech</h3><span class="cat">Web Design</span></div>
-          <p>Conversion landing site for an early-stage startup.</p>
-        </article>
-        <article class="pf open-modal anim" data-cat-key="branding" data-title="Savanna Eats" data-cat="Branding" data-img="https://images.unsplash.com/photo-1516749396351-ab12ad535d7c?auto=format&fit=crop&w=1200&q=80" data-desc="Savanna Eats wanted packaging that stood out the moment a rider handed it over. We built a bold, appetite-driven identity with a flexible logo system and packaging templates that scale across their growing menu.">
-          <div class="pf-shot"><img src="https://images.unsplash.com/photo-1516749396351-ab12ad535d7c?auto=format&fit=crop&w=900&q=80" alt="Logo and packaging identity for Savanna Eats food delivery brand" loading="lazy"><div class="ov"><span>View case study →</span></div></div>
-          <div class="pf-meta"><h3>Savanna Eats</h3><span class="cat">Branding</span></div>
-          <p>Logo and packaging for a food delivery brand.</p>
-        </article>
-        <article class="pf open-modal anim" data-cat-key="web-development" data-title="Bluerock Capital" data-cat="Web Development" data-img="https://images.unsplash.com/photo-1758846946191-dfe1cd91779b?auto=format&fit=crop&w=1200&q=80" data-desc="Bluerock needed a portal where clients securely view portfolio updates alongside a marketing site that builds trust with prospects. We delivered both on one secure platform with strong authentication and a confidence-inspiring design.">
-          <div class="pf-shot"><img src="https://images.unsplash.com/photo-1758846946191-dfe1cd91779b?auto=format&fit=crop&w=900&q=80" alt="Secure client portal for Bluerock Capital advisory firm" loading="lazy"><div class="ov"><span>View case study →</span></div></div>
-          <div class="pf-meta"><h3>Bluerock Capital</h3><span class="cat">Web Dev</span></div>
-          <p>Secure client portal and marketing site.</p>
-        </article>
-        <article class="pf open-modal anim" data-cat-key="web-design" data-title="Northwind Trading" data-cat="Web Design" data-img="https://images.unsplash.com/photo-1569748130764-3fed0c102c59?auto=format&fit=crop&w=1200&q=80" data-desc="Northwind needed a catalogue site that worked for buyers across multiple African markets. We designed a clear, searchable product catalogue with multi-currency pricing and bulk-enquiry forms that cut their sales team's admin time significantly.">
-          <div class="pf-shot"><img src="https://images.unsplash.com/photo-1569748130764-3fed0c102c59?auto=format&fit=crop&w=900&q=80" alt="B2B catalogue website with multi-currency pricing for Northwind Trading" loading="lazy"><div class="ov"><span>View case study →</span></div></div>
-          <div class="pf-meta"><h3>Northwind Trading</h3><span class="cat">Web Design</span></div>
-          <p>B2B catalogue with multi-currency pricing.</p>
-        </article>
-        <article class="pf open-modal anim" data-cat-key="branding" data-title="Pulse Fitness Studio" data-cat="Branding" data-img="https://images.unsplash.com/photo-1758957646695-ec8bce3df462?auto=format&fit=crop&w=1200&q=80" data-desc="Pulse wanted an identity as high-energy as their classes. We built a bold visual system paired with a booking-first website that lets members reserve in two taps — class bookings rose 41% in the first month.">
-          <div class="pf-shot"><img src="https://images.unsplash.com/photo-1758957646695-ec8bce3df462?auto=format&fit=crop&w=900&q=80" alt="Brand identity and booking website for Pulse Fitness Studio" loading="lazy"><div class="ov"><span>View case study →</span></div></div>
-          <div class="pf-meta"><h3>Pulse Fitness Studio</h3><span class="cat">Branding</span></div>
-          <p>Identity and class-booking site for a boutique gym.</p>
+        <article class="pf open-modal anim" data-cat-key="branding" data-title="Classic Lo" data-cat="Branding" data-services="Branding | Web Design | Shopify" data-url="https://www.classiclo.co.za" data-img="assets/portfolio/classic-lo.png" data-desc="Full identity system, from logo to a Shopify ecommerce store selling baby products.">
+          <div class="pf-shot"><img src="assets/portfolio/classic-lo.png" alt="Brand identity and Shopify store for baby brand Classic Lo" loading="lazy"><div class="ov"><span>View case study →</span></div></div>
+          <div class="pf-meta"><h3>Classic Lo</h3><span class="cat">Branding</span></div>
+          <p>Full identity system, from logo to a Shopify store selling baby products.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="section section--ink cta-big">
+  <section class="section cta-big cta-gold">
     <div class="wrap">
       <p class="kicker anim" style="justify-content:center;">Like what you see?</p>
       <h2 class="display-l anim">Let's create <em class="uv">yours.</em></h2>
@@ -950,42 +1112,26 @@ em.uv{ font-family:var(--serif); font-style:italic; font-weight:400; text-transf
   <section class="hero page-hero section--ink">
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="wrap hero-inner">
-      <p class="kicker reveal-hero-el">Get in touch</p>
-      <h1 class="display-l" id="contact-h1" style="margin:1.4rem 0;">
-        <span class="rh-mask"><span class="rh-line">Let's start</span></span>
-        <span class="rh-mask"><span class="rh-line">your <em class="uv">project.</em></span></span>
-      </h1>
-      <p class="lead muted-ink reveal-hero-el">Tell us about your business and what you're trying to achieve — we'll reply within one business day with next steps.</p>
-    </div>
-  </section>
-
-  <section class="section section--bone">
-    <div class="wrap">
-      <div class="contact-grid">
-        <div>
-          <!-- To connect to a real inbox: set a form action to your endpoint (Formspree/Getform),
-               or POST the data via fetch() to your own function. The handler below simulates success. -->
-          <form id="cform" novalidate>
-            <div class="field" id="fName"><label for="iName">Full name</label><input id="iName" name="name" type="text" autocomplete="name" required><p class="err">Please enter your name.</p></div>
-            <div class="field" id="fEmail"><label for="iEmail">Email address</label><input id="iEmail" name="email" type="email" autocomplete="email" required><p class="err">Please enter a valid email address.</p></div>
-            <div class="field" id="fPhone"><label for="iPhone">Phone number</label><input id="iPhone" name="phone" type="tel" autocomplete="tel"></div>
-            <div class="field" id="fMsg"><label for="iMsg">Tell us about your project</label><textarea id="iMsg" name="message" required></textarea><p class="err">Please tell us a little about your project.</p></div>
-            <button type="submit" class="btn btn-uv magnetic" id="cbtn" style="width:100%; justify-content:center;"><span class="dot"></span>Send Message</button>
-          </form>
-          <div id="sent" role="status"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><h3 class="display-s">Message sent.</h3><p class="muted-bone" style="margin-top:.6rem;">Thanks for reaching out — we'll be in touch within one business day.</p><button class="btn btn-line" id="resetBtn" style="margin-top:1.4rem;">Send another</button></div>
+      <div class="contact-hero-grid">
+        <div class="contact-hero-copy">
+          <p class="kicker reveal-hero-el">Get in touch</p>
+          <h1 class="display-l" id="contact-h1" style="margin:1.4rem 0;">
+            <span class="rh-mask"><span class="rh-line">Let's start</span></span>
+            <span class="rh-mask"><span class="rh-line">your <em class="uv">project.</em></span></span>
+          </h1>
+          <p class="lead muted-ink reveal-hero-el">Tell us about your business and what you're trying to achieve — we'll reply within one business day with next steps.</p>
         </div>
-        <div class="info">
-          <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg><div><div class="l">Email</div><div class="v">hello@webxperts.co.za</div></div></div>
-          <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.4 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg><div><div class="l">Phone</div><div class="v">+27 65 961 8206</div></div></div>
+        <aside class="info reveal-hero-el">
+          <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg><div><div class="l">Email</div><div class="v"><a href="mailto:hello@webxperts.co.za">hello@webxperts.co.za</a></div></div></div>
+          <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.4 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg><div><div class="l">Phone</div><div class="v"><a href="tel:+27659618206">+27 65 961 8206</a></div></div></div>
           <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><div class="l">Studio</div><div class="v">Pretoria, South Africa</div></div></div>
           <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg><div><div class="l">Hours</div><div class="v">Mon – Fri, 8am – 5pm SAST</div></div></div>
           <div class="socials">
             <a href="https://www.instagram.com/webxperts" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="#ECE6D9" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
             <a href="https://wa.me/27659618206" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="#ECE6D9" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3z"/><path d="M8.5 8.2c.2-.5.4-.5.6-.5h.5c.2 0 .4 0 .6.5l.7 1.6c.1.2 0 .4-.1.6l-.4.5c-.1.2-.2.3 0 .6a6 6 0 0 0 2.6 2.3c.3.1.4 0 .6-.1l.5-.6c.2-.2.3-.2.6-.1l1.5.8c.3.1.4.2.4.4 0 .4-.2 1.1-.6 1.3-.4.3-1.2.6-2 .4a8 8 0 0 1-5.3-4.6c-.3-.8-.1-1.6.1-2z"/></svg></a>
-            <a href="https://www.facebook.com/webxperts" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="#ECE6D9" stroke-width="1.6"><path d="M15 4h-2a4 4 0 0 0-4 4v2H7v3h2v7h3v-7h2.5l.5-3H12V8a1 1 0 0 1 1-1h2z"/></svg></a>
-            
+            <a href="https://www.facebook.com/webxpertssa/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="#ECE6D9" stroke-width="1.6"><path d="M15 4h-2a4 4 0 0 0-4 4v2H7v3h2v7h3v-7h2.5l.5-3H12V8a1 1 0 0 1 1-1h2z"/></svg></a>
           </div>
-        </div>
+        </aside>
       </div>
     </div>
   </section>
@@ -1002,22 +1148,24 @@ em.uv{ font-family:var(--serif); font-style:italic; font-weight:400; text-transf
         <div class="socials">
           <a href="https://www.instagram.com/webxperts" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="#ECE6D9" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
           <a href="https://wa.me/27659618206" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="#ECE6D9" stroke-width="1.6" stroke-linejoin="round"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3z"/><path d="M8.5 8.2c.2-.5.4-.5.6-.5h.5c.2 0 .4 0 .6.5l.7 1.6c.1.2 0 .4-.1.6l-.4.5c-.1.2-.2.3 0 .6a6 6 0 0 0 2.6 2.3c.3.1.4 0 .6-.1l.5-.6c.2-.2.3-.2.6-.1l1.5.8c.3.1.4.2.4.4 0 .4-.2 1.1-.6 1.3-.4.3-1.2.6-2 .4a8 8 0 0 1-5.3-4.6c-.3-.8-.1-1.6.1-2z"/></svg></a>
-          <a href="https://www.facebook.com/webxperts" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="#ECE6D9" stroke-width="1.6"><path d="M15 4h-2a4 4 0 0 0-4 4v2H7v3h2v7h3v-7h2.5l.5-3H12V8a1 1 0 0 1 1-1h2z"/></svg></a>
+          <a href="https://www.facebook.com/webxpertssa/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="#ECE6D9" stroke-width="1.6"><path d="M15 4h-2a4 4 0 0 0-4 4v2H7v3h2v7h3v-7h2.5l.5-3H12V8a1 1 0 0 1 1-1h2z"/></svg></a>
         </div>
       </div>
       <div class="footer-col"><h4>Navigate</h4><ul><li><a href="#home" data-link>Home</a></li><li><a href="#about" data-link>About</a></li><li><a href="#services" data-link>Services</a></li><li><a href="#portfolio" data-link>Portfolio</a></li><li><a href="#contact" data-link>Contact</a></li></ul></div>
       <div class="footer-col"><h4>Services</h4><ul><li><a href="#services" data-link>Web Design</a></li><li><a href="#services" data-link>Web Development</a></li><li><a href="#services" data-link>Brand Identity</a></li><li><a href="#services" data-link>SEO &amp; Performance</a></li><li><a href="#services" data-link>Care &amp; Support</a></li></ul></div>
-      <div class="footer-col"><h4>Contact</h4><ul><li><span>hello@webxperts.co.za</span></li><li><span>+27 65 961 8206</span></li><li><span>Pretoria, ZA</span></li><li><a href="#contact" data-link>Book a Free Call →</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:hello@webxperts.co.za">hello@webxperts.co.za</a></li><li><a href="tel:+27659618206">+27 65 961 8206</a></li><li><span>Pretoria, ZA</span></li><li><a href="#contact" data-link>Book a Free Call →</a></li></ul></div>
     </div>
     <div class="footer-bottom"><span class="mono">© <span id="yr">2026</span> Webxperts. All rights reserved.</span><span class="mono">Pretoria — <span id="jhbClock">--:--:--</span> SAST</span></div>
   </div>
 </footer>
 
+<button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
   <div class="modal-box">
     <button class="modal-x" id="mClose" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4l16 16M20 4 4 20"/></svg></button>
     <div class="modal-media"><img id="mImg" src="" alt=""></div>
-    <div class="modal-body"><span class="cat" id="mCat"></span><h3 id="mTitle"></h3><p id="mDesc"></p><a href="#contact" class="btn btn-uv magnetic" data-link>Discuss a Similar Project</a></div>
+    <div class="modal-body"><span class="cat" id="mCat"></span><h3 id="mTitle"></h3><p id="mDesc"></p><div class="modal-cta"><a id="mUrl" class="btn btn-line" target="_blank" rel="noopener" hidden>Visit Website</a><a href="#contact" class="btn btn-uv magnetic" data-link>Discuss a Similar Project</a></div></div>
   </div>
 </div>
 
@@ -1035,6 +1183,14 @@ em.uv{ font-family:var(--serif); font-style:italic; font-weight:400; text-transf
   var qs=function(s,c){return (c||document).querySelector(s);};
   var qsa=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s));};
   document.getElementById('yr').textContent = new Date().getFullYear();
+
+  /* ---------- PRICING SYNC: one source ([data-packages-src]) mirrored everywhere ---------- */
+  (function(){
+    var src=qs('[data-packages-src] > .wrap'); if(!src) return;
+    qsa('[data-packages-mirror]').forEach(function(sec){
+      if(!qs('.wrap',sec)) sec.appendChild(src.cloneNode(true));
+    });
+  })();
 
   /* ---------- META ---------- */
   var META = {
@@ -1062,9 +1218,10 @@ em.uv{ font-family:var(--serif); font-style:italic; font-weight:400; text-transf
   function scrollTop(){ if(lenis){ lenis.scrollTo(0,{immediate:true}); } window.scrollTo(0,0); }
 
   /* ---------- HEADER ---------- */
-  var header=document.getElementById('header');
-  function hScroll(){ header.classList.toggle('scrolled',(window.scrollY||document.documentElement.scrollTop)>40); }
+  var header=document.getElementById('header'), toTop=document.getElementById('toTop');
+  function hScroll(){ var y=window.scrollY||document.documentElement.scrollTop; header.classList.toggle('scrolled',y>40); if(toTop) toTop.classList.toggle('show',y>600); }
   if(lenis){ lenis.on('scroll',hScroll); } window.addEventListener('scroll',hScroll,{passive:true}); hScroll();
+  if(toTop){ toTop.addEventListener('click',function(){ if(lenis){ lenis.scrollTo(0,{duration:1}); } else { window.scrollTo({top:0,behavior:(RM?'auto':'smooth')}); } }); }
 
   /* ---------- MOBILE MENU ---------- */
   var mt=document.getElementById('menuToggle'), mm=document.getElementById('mobileMenu');
@@ -1291,19 +1448,34 @@ em.uv{ font-family:var(--serif); font-style:italic; font-weight:400; text-transf
     qsa('.filter').forEach(function(x){ x.classList.remove('active'); }); b.classList.add('active');
     var f=b.dataset.filter, vis=[];
     qsa('.pf').forEach(function(card){
-      var ok=f==='all'||card.dataset.catKey===f;
+      // An item belongs to every category among its services (slugified), plus its base cat-key.
+      var keys=(card.dataset.catKey?[card.dataset.catKey]:[]).concat(
+        (card.dataset.services||'').split('|').map(function(s){ return s.trim().toLowerCase().replace(/\s+/g,'-'); })
+      );
+      var ok=f==='all'||keys.indexOf(f)>=0;
       card.classList.toggle('hide',!ok); if(ok) vis.push(card);
     });
     if(hasGSAP && !RM) gsap.fromTo(vis,{opacity:0,y:18},{opacity:1,y:0,duration:.5,stagger:.05,ease:'power3.out'});
     if(lenis) setTimeout(function(){ ScrollTrigger.refresh(); },300);
   });
 
+  /* ---------- PACKAGES: once-off 5-page <-> one-page toggle ---------- */
+  document.addEventListener('change',function(e){
+    if(!e.target.classList||!e.target.classList.contains('pkg-toggle')) return;
+    var on=e.target.checked, card=e.target.closest('.price-card');
+    if(!card) return;
+    var amt=card.querySelector('.price-amt'); if(amt) amt.textContent=on?'R3 800':'R7 500';
+    var pages=card.querySelector('[data-feat-pages]'); if(pages) pages.textContent=on?'One-page marketing website — no templates':'Custom 5-page website — no templates';
+    var lbl=card.querySelector('.pkg-toggle-label'); if(lbl) lbl.textContent=on?'One-page site':'5-page website';
+  });
+
   /* ---------- MODAL ---------- */
-  var modal=document.getElementById('modal'), mImg=document.getElementById('mImg'), mCat=document.getElementById('mCat'), mTitle=document.getElementById('mTitle'), mDesc=document.getElementById('mDesc'), lastCard=null;
+  var modal=document.getElementById('modal'), mImg=document.getElementById('mImg'), mCat=document.getElementById('mCat'), mTitle=document.getElementById('mTitle'), mDesc=document.getElementById('mDesc'), mUrl=document.getElementById('mUrl'), lastCard=null;
   function openModal(card){
     lastCard=card;
     mImg.src=card.dataset.img||''; mImg.alt=(card.dataset.title||'')+' project preview';
-    mCat.textContent=card.dataset.cat||''; mTitle.innerHTML=card.dataset.title||''; mDesc.textContent=card.dataset.desc||'';
+    mCat.textContent=card.dataset.services||card.dataset.cat||''; mTitle.innerHTML=card.dataset.title||''; mDesc.textContent=card.dataset.desc||'';
+    if(mUrl){ if(card.dataset.url){ mUrl.href=card.dataset.url; mUrl.hidden=false; } else { mUrl.hidden=true; mUrl.removeAttribute('href'); } }
     modal.classList.add('open'); if(lenis) lenis.stop(); document.body.style.overflow='hidden';
     document.getElementById('mClose').focus(); initMagnetic(modal);
   }
