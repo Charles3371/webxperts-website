@@ -17,3 +17,7 @@ dist/
 
 # Design source / working files (not for production deploy)
 redesign/
+
+# Internal docs (kept local, not deployed)
+CLAUDE.md
+PORTFOLIO-IMAGES.md
